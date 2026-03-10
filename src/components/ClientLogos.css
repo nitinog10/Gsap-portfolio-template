@@ -1,0 +1,40 @@
+.client-logos {
+  padding: 8rem 4rem;
+  background: #000;
+  overflow: hidden;
+}
+
+.client-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.marquee {
+  display: flex;
+  margin-top: 4rem;
+  white-space: nowrap;
+}
+
+.marquee-content {
+  display: flex;
+  gap: 6rem;
+  padding-right: 6rem;
+}
+
+.client-item {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.1);
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+.client-item:hover {
+  color: #00ff88;
+}
+
+@media (max-width: 768px) {
+  .client-logos {
+    padding: 6rem 2rem;
+  }
+}

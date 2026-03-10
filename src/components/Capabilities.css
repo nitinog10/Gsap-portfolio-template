@@ -1,0 +1,87 @@
+.capabilities {
+  min-height: 100vh;
+  padding: 10rem 4rem;
+  background: #000;
+}
+
+.capabilities-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 6rem;
+  background: linear-gradient(135deg, #fff 0%, #00ff88 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+}
+
+.capability-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  padding: 3rem;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+
+.capability-card:hover {
+  background: rgba(0, 255, 136, 0.05);
+  border-color: #00ff88;
+  transform: translateY(-10px);
+  box-shadow: 0 20px 60px rgba(0, 255, 136, 0.2);
+}
+
+.cap-icon {
+  font-size: 4rem;
+  margin-bottom: 2rem;
+}
+
+.cap-title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.cap-description {
+  font-size: 1.125rem;
+  color: #aaa;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.cap-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.cap-skills span {
+  padding: 0.5rem 1rem;
+  background: rgba(0, 255, 136, 0.1);
+  border: 1px solid rgba(0, 255, 136, 0.3);
+  border-radius: 20px;
+  font-size: 0.875rem;
+  color: #00ff88;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .capabilities {
+    padding: 6rem 2rem;
+  }
+
+  .capabilities-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

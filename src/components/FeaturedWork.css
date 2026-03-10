@@ -1,0 +1,120 @@
+.featured-work {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 8rem 4rem;
+  background: linear-gradient(180deg, #000 0%, #0a0a1a 100%);
+}
+
+.featured-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.featured-image {
+  position: relative;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.featured-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.6s;
+}
+
+.featured-image:hover img {
+  transform: scale(1.05);
+}
+
+.image-glow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, #00ff88 0%, transparent 70%);
+  opacity: 0.2;
+  animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.featured-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.featured-label {
+  font-size: 0.875rem;
+  color: #00ff88;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+}
+
+.featured-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.featured-description {
+  font-size: 1.25rem;
+  color: #aaa;
+  line-height: 1.8;
+}
+
+.featured-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.featured-tags span {
+  padding: 0.75rem 1.5rem;
+  background: rgba(0, 255, 136, 0.1);
+  border: 1px solid rgba(0, 255, 136, 0.3);
+  border-radius: 50px;
+  font-size: 0.875rem;
+  color: #00ff88;
+  font-weight: 600;
+}
+
+.featured-btn {
+  padding: 1.25rem 3rem;
+  background: #00ff88;
+  color: #000;
+  border: none;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  align-self: flex-start;
+}
+
+.featured-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 255, 136, 0.4);
+}
+
+@media (max-width: 1024px) {
+  .featured-container {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .featured-work {
+    padding: 4rem 2rem;
+  }
+}
