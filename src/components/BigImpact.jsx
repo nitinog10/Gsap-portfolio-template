@@ -1,36 +1,21 @@
-import { useEffect, useRef } from 'react'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import './BigImpact.css'
+```jsx
+import { useEffect, useRef } from'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useAnimation } from '../utils/animation';
+import './BigImpact.css';
 
 const BigImpact = () => {
-  const sectionRef = useRef(null)
-  const statsRef = useRef([])
+  const sectionRef = useRef(null);
+  const statsRef = useRef([]);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      statsRef.current.forEach((stat) => {
-        const number = stat.querySelector('.impact-number')
-        const target = parseInt(number.getAttribute('data-target'))
+    const { ctx, animateStats } = useAnimation(statsRef);
 
-        gsap.from(number, {
-          textContent: 0,
-          duration: 2,
-          ease: 'power1.out',
-          snap: { textContent: 1 },
-          scrollTrigger: {
-            trigger: stat,
-            start: 'top 80%',
-          },
-          onUpdate: function () {
-            number.textContent = Math.ceil(number.textContent) + '+'
-          },
-        })
-      })
-    }, sectionRef)
+    animateStats();
 
-    return () => ctx.revert()
-  }, [])
+    return () => ctx.revert();
+  }, []);
 
   return (
     <section ref={sectionRef} className="big-impact">
@@ -56,7 +41,41 @@ const BigImpact = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default BigImpact
+export default BigImpact;
+```
+
+```jsx
+// File: src/utils/animation.js
+
+import gsap from 'gsap';
+
+export const useAnimation = (statsRef) => {
+  const ctx = gsap.context(() => {});
+
+  const animateStats = () => {
+    statsRef.current.forEach((stat) => {
+      const number = stat.querySelector('.impact-number');
+      const target = parseInt(number.getAttribute('data-target'));
+
+      gsap.from(number, {
+        textContent: 0,
+        duration: 2,
+        ease: 'power1.out',
+        snap: { textContent: 1 },
+        scrollTrigger: {
+          trigger: stat,
+          start: 'top 80%',
+        },
+        onUpdate: function () {
+          number.textContent = Math.ceil(number.textContent) + '+';
+        },
+      });
+    });
+  };
+
+  return { ctx, animateStats };
+};
+```
