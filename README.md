@@ -4,40 +4,43 @@
 
 ## Overview
 
-```markdown
-This repository, "repo_458964a9a5e4", is designed to serve as a comprehensive web application template leveraging modern web development technologies. The primary purpose of this project is to provide a robust starting point for developers looking to build sophisticated, responsive, and visually appealing web applications. It encapsulates a variety of components and sections commonly found in professional web applications, including a hero section, about page, services showcase, project gallery, and contact form, among others.
+The `repo_002bb40e12fe` repository contains a React-based web application built using Vite as the build tool. The project is structured to support a dynamic, component-driven UI, with each section of the application encapsulated within its own set of `.jsx` and `.css` files located in the `src/components` directory. The application leverages modern JavaScript features and React's component-based architecture to deliver a responsive and interactive user experience.
 
-The tech stack for this project includes React for building the user interface, Vite as the build tool for fast development and production builds, and CSS for styling. The choice of React allows for component-based architecture, enabling reusable UI components and efficient state management. Vite enhances the development experience with fast hot module replacement and optimized production builds. CSS is utilized for styling, with each component having its own stylesheet to maintain modularity and scalability.
+At the core of the project, `vite.config.js` configures the Vite build tool, optimizing the development and production builds. The `package.json` file manages project dependencies, scripts, and metadata. The `src` directory houses the application's source code, with `main.jsx` serving as the entry point that mounts the React application. The `App.jsx` and `App.css` files define the application's main component and its associated styles, respectively.
 
-The high-level architecture of the application follows a component-based structure, where each section of the web application is encapsulated within its own React component. This modular approach facilitates easier maintenance, scalability, and reusability of code. The `src` directory contains the core application logic, with `App.jsx` serving as the main entry point. The `components` directory houses individual React components, each with its corresponding CSS file for styling.
-
-The intended audience for this repository includes web developers, designers, and anyone interested in building modern web applications with a strong emphasis on user experience and visual design. Whether you're a seasoned developer looking for a quick start template or a newcomer to web development seeking a structured project to learn from, this repository offers a solid foundation to build upon.
-```
+The application is designed for users seeking a visually engaging and informative web presence, likely for showcasing portfolios, services, or company information. It includes sections for about, capabilities, client logos, contact information, and more, each implemented as reusable React components. This modular approach facilitates easy maintenance and scalability, allowing for quick updates and additions to the application's content and features.
 
 ## Architecture
 
 ```markdown
-- **Layers / Modules**:
-  - **Root**: Contains configuration and entry point files (`vite.config.js`, `package.json`, `README.md`).
-  - **Source (`src/`)**: Main application codebase.
-    - **Entry Point**: `src/main.jsx`
-    - **Global Styles**: `src/index.css`
-    - **Main Application Component**: `src/App.jsx` with associated styles `src/App.css`.
-    - **Components (`src/components/`)**: Modular, reusable UI components each with their own `.jsx` and `.css` files.
+The codebase is structured to facilitate a modular and maintainable React application. Here's a breakdown of its architecture:
 
-- **Data Flow**:
-  - The application starts at `src/main.jsx`, which renders the root component `App` defined in `src/App.jsx`.
-  - `App.jsx` likely manages the application's state and passes down props to child components.
-  - Each component within `src/components/` is responsible for rendering specific parts of the UI and can manage its own state or receive props from parent components.
+### Organization
 
-- **Key Design Patterns**:
-  - **Component-Based Architecture**: Utilizes React's component system for building UI, promoting reusability and maintainability.
-  - **Separation of Concerns**: Styles are separated from logic, with each component having its own CSS file.
-  - **Single Responsibility Principle**: Each component is designed to do one thing well, enhancing readability and maintainability.
+- **Root Level**: Contains configuration and setup files.
+  - `package.json`: Manages project dependencies and scripts.
+  - `vite.config.js`: Configuration for the Vite build tool.
+  - `README.md`: Project documentation.
 
-- **Entry Points**:
-  - **Application**: `src/main.jsx` serves as the entry point for the React application, initializing the app and rendering it to the DOM.
-  - **Development Server**: Configured via `vite.config.js` for development, leveraging Vite's fast development server.
+- **`src/` Directory**: Houses all source code.
+  - `App.css`, `App.jsx`, `index.css`, `main.jsx`: Core application files responsible for initializing the React app and setting up global styles.
+  - `components/`: A directory dedicated to React components, each with its own `.css` and `.jsx` files for styling and logic, respectively.
+
+### Data Flow
+
+Data flows top-down in this React application. The `main.jsx` file serves as the entry point, rendering the `App` component defined in `App.jsx`. This component, in turn, utilizes various child components from the `components/` directory to build the UI. Each component is responsible for its own state and props, adhering to React's component-based architecture.
+
+### Key Design Patterns
+
+- **Component-Based Architecture**: The application is built using a component-based design, where each UI element is a separate React component. This approach enhances reusability and maintainability.
+- **CSS Modules**: Each component has its own CSS file, promoting encapsulation and avoiding style conflicts across different parts of the application.
+
+### Main Entry Points
+
+- **`main.jsx`**: The application's entry point, where the React app is initialized and the root component (`App`) is rendered.
+- **`App.jsx`**: The root component that orchestrates the rendering of all other components, defining the application's structure.
+
+Understanding this architecture is crucial for navigating the codebase, making changes, or adding new features. Each component is self-contained, making it easier to work on specific parts of the UI without affecting the entire application.
 ```
 
 ## Folder Structure
@@ -96,20 +99,20 @@ The intended audience for this repository includes web developers, designers, an
 
 ## Dependencies
 
-### Dependencies
+## Dependencies
 
-#### Production Dependencies
+### Production Dependencies
 
 - **React** (`^18.2.0`): A JavaScript library for building user interfaces, primarily used for creating reusable UI components.
-- **React-DOM** (`^18.2.0`): Provides DOM-specific methods that can be used to create React elements.
-- **GSAP** (`^3.12.5`): A JavaScript library that allows for high-performance animations that work in all major browsers.
-- **@studio-freight/lenis** (`^1.0.42`): A smooth scroll library that provides a more natural scrolling experience.
+- **React-DOM** (`^18.2.0`): Provides DOM-specific methods that can be used at the top level of a web app to enable an efficient way of managing DOM elements of the web page.
+- **GSAP** (`^3.12.5`): A JavaScript library that allows for the creation of high-performance animations that work in all major browsers.
+- **@studio-freight/lenis** (`^1.0.42`): A smooth scroll plugin for modern web applications.
 
-#### Development Dependencies
+### Development Dependencies
 
-- **@types/react** (`^18.2.66`): TypeScript definitions for React, used for type checking in development.
-- **@types/react-dom** (`^18.2.22`): TypeScript definitions for React DOM, used for type checking in development.
-- **@vitejs/plugin-react** (`^4.2.1`): A Vite plugin that provides optimized React development experience.
+- **@types/react** (`^18.2.66`): TypeScript definitions for React, providing type information for React's JavaScript library.
+- **@types/react-dom** (`^18.2.22`): TypeScript definitions for React DOM, providing type information for React's DOM JavaScript library.
+- **@vitejs/plugin-react** (`^4.2.1`): A Vite plugin that provides React support, enabling hot module replacement (HMR) and other React-specific features.
 - **Vite** (`^5.2.0`): A build tool that aims to provide a faster and leaner development experience for modern web projects.
 
 ## File Documentation
@@ -118,11 +121,11 @@ The intended audience for this repository includes web developers, designers, an
 
 #### Overview
 
-# README.md
+# README.md Documentation
 
 #### Module Overview
 
-This file provides an overview of recent code improvements and structural changes applied to the project. It aims to document enhancements, dependencies, and any relevant configurations or edge cases to ensure smooth integration and understanding of the updated codebase.
+This file provides an overview of recent code improvements and structural changes applied to the project. It documents enhancements, dependencies, and relevant configurations or edge cases to ensure smooth integration and understanding of the updated codebase.
 
 #### Dependencies
 
@@ -132,19 +135,19 @@ This file provides an overview of recent code improvements and structural change
 
 #### Classes
 
-| Class | Purpose | Key Methods |
-| --- | --- | --- |
-| BigImpact | Component for high-impact functionalities | `renderImpact()` |
-| Hero | Main hero section component | `displayHero()` |
-| ClientLogos | Displays client logos | `showLogos()` |
+| Class         | Purpose                              | Key Methods          |
+|---------------|--------------------------------------|----------------------|
+| `BigImpact`   | Component for high-impact functionalities | `renderImpact()`     |
+| `Hero`        | Main hero section component          | `displayHero()`      |
+| `ClientLogos` | Displays client logos                | `showLogos()`        |
 
 #### Functions
 
-| Function | Parameters | Returns | Description |
-| --- | --- | --- | --- |
-| addRegressionTests | `filePath` | `void` | Adds regression tests for the specified file. |
-| extractUtilityCode | `modulePath` | `void` | Extracts shared utility code into a dedicated module. |
-| regenerateDocumentation | `diagramPath` | `void` | Re-indexes and regenerates documentation after structural changes. |
+| Function               | Parameters    | Returns | Description                                   |
+|------------------------|---------------|---------|-----------------------------------------------|
+| `addRegressionTests`   | `filePath`    | `void`  | Adds regression tests for the specified file. |
+| `extractUtilityCode`   | `modulePath`  | `void`  | Extracts shared utility code into a dedicated module. |
+| `regenerateDocumentation` | `diagramPath` | `void`  | Re-indexes and regenerates documentation after structural changes. |
 
 #### Notes / Edge Cases
 
@@ -160,318 +163,309 @@ This file provides an overview of recent code improvements and structural change
 
 #### Module Overview
 
-The `package.json` file is a central configuration file for Node.js projects. It defines the project metadata, dependencies, and scripts. This file is crucial for managing the project's environment and ensuring that all team members use the same dependencies and versions.
+This file defines the project's dependencies, scripts, and metadata. It's crucial for managing the project's build process and dependencies.
 
 #### Dependencies
 
-The `package.json` file lists both production and development dependencies required for the project.
-
-| Dependency | Version | Purpose |
-|------------|---------|----------|
-| react      | ^18.2.0 | UI library for building user interfaces |
-| react-dom  | ^18.2.0 | Library for rendering React to the DOM |
-| gsap       | ^3.12.5 | Animation library for JavaScript |
-| @studio-freight/lenis | ^1.0.42 | Smooth scrolling library |
-
-| Dependency | Version | Purpose |
-|------------|---------|----------|
-| @types/react | ^18.2.66 | TypeScript types for React |
-| @types/react-dom | ^18.2.22 | TypeScript types for React DOM |
-| @vitejs/plugin-react | ^4.2.1 | Plugin for Vite to support React |
-| vite       | ^5.2.0 | Build tool and development server |
+| Package | Version | Purpose |
+|---------|---------|---------|
+| `react` | `^18.2.0` | Core library for building user interfaces. |
+| `react-dom` | `^18.2.0` | Library for rendering React components to the DOM. |
+| `gsap` | `^3.12.5` | Animation library for creating complex animations. |
+| `@studio-freight/lenis` | `^1.0.42` | Smooth scrolling library for better user experience. |
 
 #### Scripts
 
-The `package.json` file includes several scripts to facilitate development and deployment.
+| Script | Purpose |
+|--------|---------|
+| `dev` | Starts the development server using Vite. |
+| `build` | Builds the project for production using Vite. |
+| `preview` | Previews the production build. |
 
-| Script | Command | Description |
-|--------|---------|-------------|
-| dev    | vite    | Starts the development server |
-| build  | vite build | Builds the project for production |
-| preview| vite preview | Previews the production build |
+#### Configuration
 
-#### Notes / Edge Cases
+| Field | Value | Purpose |
+|-------|-------|---------|
+| `private` | `true` | Indicates that the project is private and should not be published to npm. |
+| `type` | `module` | Specifies that the project uses ES modules. |
 
-- Ensure that all dependencies are updated regularly to avoid compatibility issues.
-- The `private` field is set to `true`, indicating that this package is intended to be used internally and should not be published to a public registry.
-- The `type` field is set to `module`, indicating that the project uses ES modules.
+#### Notes
+
+- Ensure that all dependencies are updated regularly to avoid vulnerabilities.
+- The `devDependencies` section includes types and tools required for development but not for production.
+- The `scripts` section provides essential commands for development, building, and previewing the application.
 
 ### vite.config.js
 
 #### Overview
 
-# `vite.config.js` Documentation
+# `vite.config.js`
 
 #### Module Overview
 
-The `vite.config.js` file is the primary configuration file for a Vite project. It defines the build and development environment settings, including plugins and other configurations. This file exists to configure the Vite build tool for a JavaScript project, specifically enabling React support through the `@vitejs/plugin-react` plugin.
+This file configures the Vite build tool for our project. It sets up the necessary plugins, in this case, the React plugin to enable React support in the development server.
 
 #### Dependencies
 
-- `vite`: A modern build tool that aims to provide a faster and leaner development experience for modern web projects.
-- `@vitejs/plugin-react`: A plugin for Vite that enables React support in the project.
-
-#### Functions
-
-| Function | Parameters | Returns | Description |
-|----------|------------|---------|-------------|
-| `defineConfig` | `config` | `import meta` | A function to define the configuration for the Vite build tool. |
-
-#### Configuration
-
-| Setting | Purpose |
-|---------|---------|
-| `plugins` | An array of plugins to use in the Vite configuration. In this case, it includes the `@vitejs/plugin-react` plugin for React support. |
-
-#### Notes / Edge Cases
-
-- Ensure that the `@vitejs/plugin-react` plugin is installed as a dependency in your project (`npm install @vitejs/plugin-react`).
-- This configuration is minimal and focuses on enabling React support. Additional configurations can be added as needed for other features or optimizations.
-
-### src/App.css
-
-#### Overview
-
-# src/App.css Documentation
-
-#### Module Overview
-
-This CSS file defines the global styles and layout for the application. It sets up the basic visual structure, including default margins, paddings, and box-sizing. It also styles the body element and introduces a smooth scrolling behavior for the application.
-
-#### Dependencies
-
-- None
-
-#### Classes
-
-| Class | Purpose | Key Methods |
-| --- | --- | --- |
-|.app | Sets the relative positioning and full width for the main application container. | N/A |
-
-#### Notes / Edge Cases
-
-- The smooth scroll behavior is dependent on JavaScript to add the `lenis` class to the `html` element.
-- The `lenis-smooth` and `lenis-stopped` classes manage the scroll behavior, which may need to be coordinated with the JavaScript that controls these states.
-
-### src/App.jsx
-
-#### Overview
-
-# Module Overview
-
-The `src/App.jsx` file serves as the main entry point for the application, integrating various components and setting up the overall structure and behavior of the web application. It utilizes React hooks and GSAP for animations and smooth scrolling, ensuring a seamless user experience. The file is responsible for rendering the main layout and managing the lifecycle of the application.
-
-#### Dependencies
-
-| Dependency | Description |
-|------------|-------------|
-| `react` | Core React library |
-| `gsap` | GreenSock Animation Platform for animations |
-| `ScrollTrigger` | GSAP plugin for scroll-based animations |
-| `Lenis` | Smooth scroll library |
-| `./components/Navbar` | Navbar component |
-| `./components/Hero` | Hero section component |
-| `./components/FeaturedWork` | Featured work section component |
-| `./components/SpaceshipProjects` | Spaceship projects section component |
-| `./components/Capabilities` | Capabilities section component |
-| `./components/ProcessSection` | Process section component |
-| `./components/ShowcaseGallery` | Showcase gallery component |
-| `./components/ClientLogos` | Client logos section component |
-| `./components/BigImpact` | Big impact section component |
-| `./components/Footer` | Footer component |
-| `./App.css` | CSS file for styling |
-
-#### Functions
-
-| Function | Parameters | Returns | Description |
-|----------|------------|---------|-------------|
-| `App` | None | JSX | Main function that renders the application layout and initializes smooth scrolling |
-
-#### Notes / Edge Cases
-
-- Ensure that all imported components are correctly implemented and exported from their respective files.
-- The smooth scrolling setup using Lenis and GSAP should be tested across different browsers and devices to ensure compatibility.
-- The `useEffect` hook is used to initialize the smooth scrolling on component mount and clean up on unmount. Ensure that the `lenis.destroy()` method is called to prevent memory leaks.
-- The CSS file `App.css` should be reviewed to ensure that it provides the necessary styling for the components to display correctly.
-
-### src/index.css
-
-#### Overview
-
-# src/index.css Documentation
-
-This CSS file provides the foundational styling for the application, ensuring consistent and responsive design across all components. It sets up default styles, body font settings, and scroll behavior configurations for smooth user experience.
-
-#### Dependencies
-
-- None
-
-#### Classes
-
-| Class | Purpose | Key Methods |
-| --- | --- | --- |
-|.lenis | Base class for scroll behavior | N/A |
-| .lenis-smooth | Applied when smooth scrolling is enabled | N/A |
-| .lenis-stopped | Applied when scrolling is stopped | N/A |
-|.lenis-scrolling | Applied during active scrolling | N/A |
-
-#### Functions
-
-- None
-
-#### Configuration
-
-- None
-
-#### Notes / Edge Cases
-
-- The `html.lenis` class is used to set the height to auto for smooth scrolling.
-- The `.lenis.lenis-smooth` class ensures that the scroll behavior is set to auto.
-- The `.lenis.lenis-smooth [data-lenis-prevent]` class manages the overscroll behavior for elements preventing smooth scrolling.
-- The `.lenis.lenis-stopped` class hides overflow when scrolling is stopped.
-- The `.lenis.lenis-scrolling iframe` class disables pointer events for iframes during active scrolling.
-
-### src/main.jsx
-
-#### Overview
-
-# `src/main.jsx` Documentation
-
-#### Module Overview
-
-The `src/main.jsx` file serves as the entry point for the React application. It initializes the root React component and renders it to the DOM, ensuring that the application runs in strict mode for better error detection.
-
-#### Dependencies
-
-| Import | Source | Purpose |
-| --- | --- | --- |
-| `React` | `react` | Core React library for building UI components. |
-| `ReactDOM` | `react-dom/client` | React library for rendering components to the DOM. |
-| `App` | `./App` | Main application component. |
-| `index.css` | `./index.css` | Global CSS file for styling the application. |
+| Import | Purpose |
+| --- | --- |
+| `defineConfig` | A function from Vite to define the configuration object. |
+| `react` | A plugin from Vite to enable React support. |
 
 #### Functions
 
 | Function | Parameters | Returns | Description |
 | --- | --- | --- | --- |
-| `ReactDOM.createRoot(document.getElementById('root')).render` | `React.StrictMode`, `<App />` | None | Renders the `App` component inside the root DOM element in strict mode. |
+| `defineConfig` | None | Configuration object | A function to define the Vite configuration. |
 
-#### Notes / Edge Cases
+#### Configuration
 
-- Ensure that the `root` element exists in the HTML before running this script to avoid rendering errors.
-- Using `React.StrictMode` helps catch potential problems in the app, but it may cause performance overhead during development.
+| Setting | Purpose |
+| --- | --- |
+| `plugins` | An array of plugins to use in the Vite configuration. |
 
-### src/components/About.css
+#### Notes
+
+- The `react` plugin is essential for enabling React support in the development server.
+- Always ensure that the `@vitejs/plugin-react` package is installed in the project dependencies.
+
+### src/App.css
+
+#### Overview
+
+# src/App.css
+
+This file defines the core styles for the application, setting up the base layout and visual appearance. It ensures consistent styling across the app and provides a smooth scrolling experience.
+
+#### Dependencies
+
+- **None**: This file does not import any external stylesheets or libraries.
+
+#### Classes
+
+| Class | Purpose | Key Methods |
+| --- | --- | --- |
+| `.app` | Sets the main application container's layout and positioning. | N/A |
+
+#### Functions
+
+- **None**: This file does not contain any functions.
+
+#### Configuration
+
+- **None**: This file does not contain any configuration settings.
+
+#### Notes
+
+- The `*` selector resets margin and padding for all elements and sets `box-sizing` to `border-box`.
+- The `body` selector sets the default font family, background color, text color, and hides horizontal overflow.
+- The `.app` class ensures the main application container takes up the full width of the viewport and is positioned relatively.
+- The `html.lenis` and `.lenis` classes are related to smooth scrolling functionality.
+
+### src/App.jsx
+
+#### Overview
+
+# src/App.jsx
+
+#### Module Overview
+
+This file is the entry point of our React application. It sets up the main layout, imports all the necessary components, and initializes the smooth scrolling effect using the Lenis library.
+
+#### Dependencies
+
+| Import | Purpose |
+| ------ | ------- |
+| `useEffect` | React hook for side effects. |
+| `gsap` | GreenSock Animation Platform for animations. |
+| `ScrollTrigger` | GSAP plugin for scroll-based animations. |
+| `Lenis` | Smooth scrolling library. |
+| `Navbar`, `Hero`, `FeaturedWork`, `SpaceshipProjects`, `Capabilities`, `ProcessSection`, `ShowcaseGallery`, `ClientLogos`, `BigImpact`, `Footer` | Individual components that make up the application's UI. |
+| `App.css` | CSS file for styling the application. |
+
+#### Functions
+
+| Function | Parameters | Returns | Description |
+| -------- | ---------- | ------- | ----------- |
+| `App` | None | JSX | Main function that renders the application layout and initializes smooth scrolling. |
+
+#### Notes
+
+- The smooth scrolling is initialized in the `useEffect` hook, which runs once when the component mounts.
+- The `Lenis` instance is destroyed when the component unmounts to clean up resources.
+- Ensure that all imported components are correctly implemented and exported from their respective files.
+- The CSS file `App.css` should contain styles that apply to the entire application.
+
+### src/index.css
+
+#### Overview
+
+# src/index.css
+
+This file sets the foundational styles for the application, ensuring consistent layout and typography across all components.
+
+#### Dependencies
+
+This file does not import any external dependencies.
+
+#### Classes
+
+| Class | Purpose | Key Methods |
+| --- | --- | --- |
+| `.lenis.lenis-smooth` | Controls smooth scrolling behavior. | N/A |
+| `.lenis.lenis-stopped` | Disables scrolling when the scroll state is stopped. | N/A |
+| `.lenis.lenis-scrolling iframe` | Disables pointer events on iframes during scrolling. | N/A |
+
+#### Functions
+
+This file does not define any functions.
+
+#### Configuration
+
+No configuration options are defined in this file.
+
+#### Notes
+
+- The `*` selector resets margins and paddings for all elements, ensuring a clean starting point for styling.
+- The `body` element uses a system font stack for consistent rendering across different operating systems.
+- The `html.lenis` class is used to control the height of the HTML element when smooth scrolling is active.
+- The `.lenis.lenis-smooth` class manages the scroll behavior and overscroll handling for elements with the `data-lenis-prevent` attribute.
+- The `.lenis.lenis-scrolling iframe` class ensures that iframes do not receive pointer events during scrolling, preventing unwanted interactions.
+
+### src/main.jsx
 
 #### Overview
 
 # Module Overview
 
-The `src/components/About.css` file contains CSS styles for the "About" section of the application. This file is responsible for styling the layout, typography, and visual effects of the "About" page, ensuring a consistent and visually appealing user experience.
-
-# Dependencies
-
-This file does not import any external dependencies. It is a standalone CSS file.
-
-# Classes
-
-| Class | Purpose | Key Methods |
-|-------|---------|-------------|
-| `.about` | Sets the overall layout and background of the "About" section. | `min-height`, `display`, `align-items`, `padding`, `position`, `background` |
-| `.about-container` | Defines the container for the "About" content, including grid layout and spacing. | `max-width`, `margin`, `display`, `grid-template-columns`, `gap`, `align-items` |
-| `.about-text` | Styles the text content within the "About" section. | `display`, `flex-direction`, `gap` |
-| `.about-title` | Styles the title of the "About" section with gradient text effect. | `font-size`, `font-weight`, `background`, `-webkit-background-clip`, `-webkit-text-fill-color`, `background-clip`, `margin-bottom` |
-| `.about-description` | Styles the description text within the "About" section. | `font-size`, `line-height`, `color` |
-| `.about-stats` | Defines the layout for the statistics section within the "About" page. | `display`, `grid-template-columns`, `gap`, `margin-top` |
-| `.stat-item` | Styles individual statistic items with hover effects. | `display`, `flex-direction`, `align-items`, `padding`, `background`, `border`, `border-radius`, `transition` |
-| `.stat-item:hover` | Defines the hover state for statistic items. | `background`, `transform`, `border-color` |
-| `.stat-number` | Styles the number within the statistic items. | `font-size`, `font-weight`, `color`, `margin-bottom` |
-| `.stat-label` | Styles the label within the statistic items. | `font-size`, `color`, `text-transform`, `letter-spacing` |
-| `.about-image` | Sets the position for the "About" image. | `position` |
-| `.image-wrapper` | Styles the wrapper for the "About" image, including border radius and overflow handling. | `position`, `border-radius`, `overflow` |
-| `.image-wrapper img` | Styles the image within the "About" section, including size, object-fit, and filter effects. | `width`, `height`, `object-fit`, `filter`, `transition` |
-| `.image-wrapper:hover img` | Defines the hover state for the "About" image, including filter and transform effects. | `filter`, `transform` |
-| `.image-glow` | Adds a glowing effect to the "About" image with animation. | `position`, `top`, `left`, `width`, `height`, `background`, `opacity`, `animation` |
-| `@keyframes rotate` | Defines the animation for the glowing effect. | `transform` |
-| `@media (max-width: 1024px)` | Adjusts the layout for screens smaller than 1024px. | `grid-template-columns`, `gap` |
-| `@media (max-width: 768px)` | Adjusts the layout for screens smaller than 768px. | `padding`, `gap`, `padding` |
-
-# Notes / Edge Cases
-
-- The `background` property in `.about-title` uses a linear gradient for the text color, which may not be supported in older browsers.
-- The `filter` property in `.image-wrapper img` and `.image-wrapper:hover img` may not be supported in older browsers.
-- The `aspect-ratio` property in `.image-wrapper` is a modern CSS feature and may not be supported in older browsers.
-- The `@keyframes` animation in `.image-glow` is used to create a rotating glow effect, which may not be supported in older browsers.
-- Media queries are used to adjust the layout for different screen sizes, ensuring responsiveness across devices.
-
-### src/components/About.jsx
-
-#### Overview
-
-# `src/components/About.jsx` Documentation
-
-#### Module Overview
-
-The `About.jsx` file defines a React component that displays an "About Me" section for a web application. This component is designed to present a developer's profile, including a brief description, key statistics, and a profile image. The component utilizes GSAP for animations triggered by scrolling, providing a dynamic and engaging user experience.
+`src/main.jsx` is the entry point for our React application. It initializes the React root and mounts the `App` component, ensuring the application runs in strict mode for better error detection.
 
 #### Dependencies
 
-| Dependency | Description |
-|------------|-------------|
-| `useEffect` | React hook for side effects. |
-| `useRef` | React hook for referencing DOM elements. |
-| `gsap` | GreenSock Animation Platform for creating animations. |
-| `ScrollTrigger` | GSAP plugin for scroll-based animations. |
-| `./About.css` | CSS module for styling the component. |
+| Import | Purpose |
+| --- | --- |
+| `React` | Core React library for building UI components. |
+| `ReactDOM` | DOM manipulation methods for React. |
+| `App` | Main application component. |
+| `index.css` | Global styles for the application. |
 
 #### Functions
 
 | Function | Parameters | Returns | Description |
-|----------|------------|---------|-------------|
-| `About` | None | JSX element | React functional component that renders the "About Me" section. |
+| --- | --- | --- | --- |
+| `ReactDOM.createRoot` | `element` | ReactRoot | Creates a root for rendering React components. |
 
-#### Notes / Edge Cases
+#### Notes
 
-- Ensure that the `gsap` and `ScrollTrigger` libraries are properly installed and imported.
-- The `statsRef` array should be populated with the correct number of elements to match the number of statistics displayed.
-- The `src` attribute of the `img` tag should point to a valid image URL.
-- The CSS module `./About.css` should be properly linked to ensure correct styling of the component.
+- The application runs in `React.StrictMode`, which helps identify potential problems.
+- Ensure `index.css` is correctly linked to apply global styles.
+- The `root` element must exist in the HTML for mounting the React application.
 
-### src/components/BigImpact.css
+### src/components/About.css
 
 #### Overview
 
-# src/components/BigImpact.css
+# src/components/About.css
 
 #### Module Overview
 
-The `BigImpact.css` file is responsible for styling the "Big Impact" section of the application. This section is designed to highlight key statistics or metrics in a visually appealing and responsive manner. The CSS file ensures that the section is flexible, responsive, and maintains a consistent look and feel across different devices and screen sizes.
+This file defines the CSS styles for the `About` component, ensuring it has a visually appealing layout and responsive design across different devices.
 
 #### Dependencies
 
-- None
+There are no direct imports in this CSS file. It stands alone, providing all necessary styles for the `About` component.
 
 #### Classes
 
 | Class | Purpose | Key Methods |
 |-------|---------|-------------|
-| `.big-impact` | Sets the overall layout and appearance of the "Big Impact" section. | N/A |
-| `.impact-container` | Centers the content and sets a maximum width. | N/A |
-| `.impact-grid` | Defines a responsive grid layout for the impact statistics. | N/A |
-| `.impact-stat` | Styles individual impact statistics, including hover effects. | N/A |
-| `.impact-number` | Styles the numerical values of the impact statistics. | N/A |
-| `.impact-label` | Styles the labels for the impact statistics. | N/A |
+| `.about` | Sets the main container for the About section with a gradient background and flexbox layout. | N/A |
+| `.about-container` | Centers the content and sets up a grid layout for the text and stats. | N/A |
+| `.about-text` | Styles the text content with a column layout and spacing. | N/A |
+| `.about-title` | Styles the title with a gradient text effect and large font size. | N/A |
+| `.about-description` | Styles the description text with a smaller font size and light color. | N/A |
+| `.about-stats` | Sets up a grid layout for the statistics with responsive column adjustments. | N/A |
+| `.stat-item` | Styles each statistic item with padding, background, border, and hover effects. | N/A |
+| `.stat-number` | Styles the number in the statistic items with a large font size and color. | N/A |
+| `.stat-label` | Styles the label in the statistic items with a smaller font size and text transformations. | N/A |
+| `.about-image` | Sets the positioning for the image container. | N/A |
+| `.image-wrapper` | Styles the image container with rounded corners and overflow handling. | N/A |
+| `.image-wrapper img` | Styles the image itself with full coverage, grayscale filter, and hover effects. | N/A |
+| `.image-glow` | Adds a glowing effect around the image with a radial gradient and animation. | N/A |
+
+#### Notes
+
+- The `about-title` class uses `-webkit-background-clip` and `background-clip` properties to create a gradient text effect. This may not work on all browsers, so test accordingly.
+- The `image-glow` class uses a radial gradient and animation to create a glowing effect around the image. This effect is purely cosmetic and can be removed if not needed.
+- Media queries are used to adjust the layout for smaller screen sizes, ensuring the component remains responsive.
+
+### src/components/About.jsx
+
+#### Overview
+
+# `src/components/About.jsx`
+
+#### Module Overview
+
+This file defines the `About` component, which is a React functional component that displays an "About Me" section on the website. It includes a brief introduction, a profile image, and some statistics, all animated with GSAP for a dynamic user experience.
+
+#### Dependencies
+
+| Import | Purpose |
+| --- | --- |
+| `useEffect`, `useRef` | React hooks for managing side effects and references to DOM elements. |
+| `gsap` | GreenSock Animation Platform for creating animations. |
+| `ScrollTrigger` | GSAP plugin for triggering animations on scroll. |
+| `./About.css` | CSS module for styling the `About` component. |
+
+#### Functions
+
+| Function | Parameters | Returns | Description |
+| --- | --- | --- | --- |
+| `About` | None | JSX | The main React component that renders the "About Me" section. |
+
+#### Notes
+
+- The `useEffect` hook is used to set up animations when the component mounts and clean them up when it unmounts.
+- The `useRef` hook is used to reference DOM elements for GSAP animations.
+- The `gsap.context` method is used to scope the GSAP animations to the component, ensuring they are properly cleaned up.
+- The `ScrollTrigger` plugin is used to trigger animations based on scroll position.
+- The `statsRef` array is used to reference multiple elements for animating each statistic separately.
+
+### src/components/BigImpact.css
+
+#### Overview
+
+# **src/components/BigImpact.css**
+
+#### Module Overview
+
+This file defines the CSS styles for the `BigImpact` component, which is used to display impactful statistics in a visually appealing grid layout. The styles ensure a responsive design that adapts to different screen sizes, providing a consistent and engaging user experience.
+
+#### Dependencies
+
+There are no external dependencies in this CSS file. It relies solely on standard CSS properties and selectors.
+
+#### Classes
+
+| Class | Purpose | Key Methods |
+|-------|---------|-------------|
+| `.big-impact` | Sets the overall layout and background for the impact section. | N/A |
+| `.impact-container` | Centers the content and limits the maximum width. | N/A |
+| `.impact-grid` | Defines a responsive grid layout for the statistics. | N/A |
+| `.impact-stat` | Styles individual statistic boxes with hover effects. | N/A |
+| `.impact-number` | Styles the number displayed in each statistic. | N/A |
+| `.impact-label` | Styles the label text for each statistic. | N/A |
 
 #### Configuration
 
-- None
+No specific configuration is required for this CSS file. It is designed to be used as-is with the provided class names.
 
-#### Notes / Edge Cases
+#### Notes
 
-- The `.big-impact` class ensures that the section takes up at least the full viewport height.
-- The `.impact-grid` class uses a responsive grid layout that adjusts based on screen size, with a minimum column width of 250px.
-- Hover effects on `.impact-stat` elements provide visual feedback to users, enhancing the interactive experience.
-- Media queries are used to adjust padding and grid layout for screens smaller than 768px, ensuring optimal display on mobile devices.
+- The `clamp()` function in `.impact-number` ensures that the font size scales smoothly between a minimum of `4rem`, a responsive value of `8vw`, and a maximum of `6rem`.
+- The hover effects in `.impact-stat` enhance the user experience by providing visual feedback when interacting with the statistics.
+- The media query at the bottom adjusts the layout for smaller screens, ensuring the component remains usable on mobile devices.
 
 ### src/components/BigImpact.jsx
 
@@ -479,30 +473,29 @@ The `BigImpact.css` file is responsible for styling the "Big Impact" section of 
 
 # Module Overview
 
-The `src/components/BigImpact.jsx` file defines a React component named `BigImpact`. This component is designed to visually showcase the company's achievements and milestones, such as the number of projects delivered, happy clients, awards won, and years of experience. The component leverages the GSAP library for animations and ScrollTrigger for scroll-based animations, providing a dynamic and engaging user experience.
+The `src/components/BigImpact.jsx` file defines a React component that displays a section highlighting the company's achievements. It uses GSAP for animations triggered by scrolling, making the statistics visually engaging as users scroll down the page.
 
-# Dependencies
+#### Dependencies
 
-| Dependency | Description |
-|------------|-------------|
-| `react` | Core React library for building UI components. |
-| `gsap` | GreenSock Animation Platform for creating high-performance animations. |
-| `ScrollTrigger` | GSAP plugin for triggering animations based on scroll position. |
-| `../utils/animation` | Custom hook for managing GSAP animations. |
-| `BigImpact.css` | CSS file for styling the `BigImpact` component. |
+| Import | Purpose |
+| ------ | ------- |
+| `useEffect`, `useRef` | React hooks for managing side effects and references to DOM elements. |
+| `gsap`, `ScrollTrigger` | GSAP animation library and its ScrollTrigger plugin for scroll-based animations. |
+| `useAnimation` | Custom hook from `../utils/animation` to handle the animation logic. |
+| `./BigImpact.css` | CSS module for styling the component. |
 
-# Functions
+#### Functions
 
 | Function | Parameters | Returns | Description |
-|----------|------------|---------|-------------|
-| `useAnimation` | `statsRef` | `{ ctx, animateStats }` | Custom hook to manage GSAP animations for the impact statistics. |
+| -------- | ---------- | ------- | ----------- |
+| `useAnimation` | `statsRef` | `{ ctx, animateStats }` | Returns a context and a function to animate the statistics. |
 
-# Notes / Edge Cases
+#### Notes
 
-- Ensure that the `data-target` attribute is correctly set on each `.impact-number` element to reflect the desired final count.
-- The `useAnimation` hook should be called within a component or effect to properly initialize and clean up the GSAP context.
-- The `BigImpact` component relies on the presence of the `BigImpact.css` file for styling. Any changes to the CSS file may affect the visual presentation of the component.
-- The `useEffect` hook in `BigImpact` ensures that the animations are properly initialized and cleaned up to avoid memory leaks.
+- The `useAnimation` hook is designed to be used with the `statsRef` array, which holds references to the DOM elements containing the statistics.
+- The `useEffect` hook ensures that the animations are set up when the component mounts and cleaned up when it unmounts.
+- The `data-target` attribute on each `.impact-number` div is used as the target value for the animation.
+- The `onUpdate` callback in the GSAP animation rounds up the current text content and appends a `+` sign, creating a counting effect.
 
 ### src/components/Capabilities.css
 
@@ -512,100 +505,111 @@ The `src/components/BigImpact.jsx` file defines a React component named `BigImpa
 
 #### Module Overview
 
-The `Capabilities.css` file contains the styling rules for the capabilities section of the application. This file is responsible for defining the visual appearance and layout of the capabilities grid, section titles, and individual capability cards. It ensures a consistent and visually appealing presentation of the capabilities across different devices and screen sizes.
+This file defines the CSS styles for the capabilities section of the application, ensuring a consistent and visually appealing layout across different devices.
 
 #### Dependencies
 
-- None
+There are no key imports in this CSS file. It stands alone and does not rely on external stylesheets or frameworks.
 
 #### Classes
 
 | Class | Purpose | Key Methods |
-|-------|---------|-------------|
-| `.capabilities` | Sets the minimum height, padding, and background color for the capabilities section. | N/A |
-| `.capabilities-container` | Defines the maximum width and centering of the capabilities container. | N/A |
-| `.section-title` | Styles the section title with font size, weight, text alignment, margin, background gradient, and text fill color. | N/A |
-| `.capabilities-grid` | Configures the grid layout for the capabilities grid with columns and gap. | N/A |
-| `.capability-card` | Styles the capability cards with background, border, padding, transition, and cursor properties. | N/A |
-| `.capability-card:hover` | Defines the hover state for capability cards with background, border color, transform, and box shadow. | N/A |
-| `.cap-icon` | Sets the font size and margin for capability icons. | N/A |
-| `.cap-title` | Styles the capability titles with font size, weight, and margin. | N/A |
-| `.cap-description` | Configures the font size, color, line height, and margin for capability descriptions. | N/A |
-| `.cap-skills` | Defines the flex layout, gap, and wrapping for capability skills. | N/A |
-| `.cap-skills span` | Styles the capability skills with padding, background, border, border radius, font size, color, and font weight. | N/A |
+| --- | --- | --- |
+| `.capabilities` | Sets the main container's minimum height, padding, and background color. | N/A |
+| `.capabilities-container` | Centers the content with a maximum width and horizontal margin. | N/A |
+| `.section-title` | Styles the section title with a gradient background and text fill. | N/A |
+| `.capabilities-grid` | Creates a responsive grid layout for capability cards. | N/A |
+| `.capability-card` | Defines the appearance and transition effects for capability cards. | N/A |
+| `.capability-card:hover` | Changes the card's appearance on hover. | N/A |
+| `.cap-icon` | Styles the icon within the capability card. | N/A |
+| `.cap-title` | Styles the title of the capability. | N/A |
+| `.cap-description` | Styles the description of the capability. | N/A |
+| `.cap-skills` | Styles the skills list within the capability card. | N/A |
+| `.cap-skills span` | Styles individual skill tags within the skills list. | N/A |
 
-#### Notes / Edge Cases
+#### Configuration
 
-- The `background` property in `.section-title` uses a linear gradient to create a text effect. Ensure that the gradient direction and colors are consistent with the overall design.
-- The `grid-template-columns` property in `.capabilities-grid` uses `repeat(auto-fit, minmax(300px, 1fr))` to create a responsive grid layout. This ensures that the grid adapts to different screen sizes and devices.
-- The hover effect in `.capability-card:hover` includes a translateY transformation and box shadow to create a subtle lift effect. Adjust the values as needed to achieve the desired visual impact.
-- The media query at the end of the file adjusts the padding and grid layout for screens with a maximum width of 768px, ensuring a responsive design on smaller devices.
+There are no specific configurations in this file. It uses standard CSS properties to achieve the desired layout and styling.
+
+#### Notes
+
+- The `background-clip` and `text-fill-color` properties in `.section-title` create a gradient text effect.
+- The `transition` property in `.capability-card` ensures smooth visual changes on hover.
+- Media queries are used to adjust the layout for smaller screens, ensuring responsiveness.
 
 ### src/components/Capabilities.jsx
 
 #### Overview
 
-# Module Overview
+# **src/components/Capabilities.jsx**
 
-The `src/components/Capabilities.jsx` file defines a React component that showcases the various capabilities and skills of a developer. This component is designed to be visually engaging and informative, highlighting different areas of expertise such as web development, 3D & WebGL, animation, and UI/UX design. It leverages GSAP for animations and provides a structured layout for displaying capabilities.
+#### Module Overview
+
+This file defines the `Capabilities` component, which displays a grid of cards showcasing various skills and technologies. Each card includes an icon, title, description, and a list of related skills. The component uses GSAP for animations triggered by scrolling.
 
 #### Dependencies
 
-| Dependency | Type | Description |
-|------------|------|-------------|
-| `useEffect`, `useRef` | React Hooks | Built-in React hooks for managing side effects and references. |
-| `gsap` | Library | GreenSock Animation Platform for creating animations. |
-| `ScrollTrigger` | Plugin | GSAP plugin for scroll-based animations. |
-| `./Capabilities.css` | CSS File | Custom styles for the component. |
+| Import | Purpose |
+| ------ | ------- |
+| `useEffect`, `useRef` | React hooks for managing side effects and references. |
+| `gsap` | GreenSock Animation Platform for creating animations. |
+| `ScrollTrigger` | GSAP plugin for triggering animations on scroll. |
+| `./Capabilities.css` | CSS module for styling the component. |
 
 #### Classes
 
-There are no classes defined in this file.
+There are no classes in this file.
 
 #### Functions
 
-There are no standalone functions defined in this file.
+There are no standalone functions in this file.
 
 #### Configuration
 
-There are no specific configurations or constants defined in this file.
+The `capabilities` array holds the data for each skill category, including the title, description, icon, and related skills.
 
-#### Notes / Edge Cases
+#### Notes
 
-- Ensure that GSAP and its plugins are properly installed and imported.
-- The `capabilities` array should be updated as needed to reflect the most current skills and capabilities.
-- The animation effects depend on the `cardsRef` references being correctly assigned to each capability card.
-- The `useEffect` hook ensures that animations are properly cleaned up when the component is unmounted.
+- The `useEffect` hook sets up scroll-triggered animations for each card using GSAP.
+- The `useRef` hook is used to reference the section and cards for the animations.
+- Ensure the CSS module `Capabilities.css` is properly linked for styling.
+- The `capabilities` array can be extended or modified to include additional skills.
 
 ### src/components/ClientLogos.css
 
 #### Overview
 
-# ClientLogos.css Documentation
+# Module Overview
 
-#### Module Overview
-
-This CSS file defines the styling rules for the client logos component. It ensures that the logos are displayed in a visually appealing manner, with responsive design adjustments for different screen sizes.
+This file defines the CSS styles for the `ClientLogos` component, which displays a horizontal scrolling marquee of client logos. The styles ensure the logos are displayed with appropriate padding, background, and responsive behavior.
 
 #### Dependencies
 
-- None
+None.
 
 #### Classes
 
-| Class           | Purpose                  | Key Methods |
-|-----------------|--------------------------|------------|
-| `.client-logos` | Styles the container for client logos | N/A |
-| `.client-container` | Centers the logo container with a maximum width | N/A |
-| `.marquee`      | Creates a horizontal scrolling container for logos | N/A |
-| `.marquee-content` | Flex container for logo items with spacing | N/A |
-| `.client-item`   | Styles individual client logos with responsive font size | N/A |
-| `.client-item:hover` | Changes logo color on hover | N/A |
+| Class | Purpose | Key Methods |
+| --- | --- | --- |
+| `.client-logos` | Main container for client logos with padding and background. | N/A |
+| `.client-container` | Centers the marquee container with a max width. | N/A |
+| `.marquee` | Horizontally aligns the logos in a flex container. | N/A |
+| `.marquee-content` | Flex container for logos with spacing and padding. | N/A |
+| `.client-item` | Styles individual client logos with font size, weight, color, and hover effect. | N/A |
 
-#### Notes / Edge Cases
+#### Functions
 
-- The `.client-item` class applies a transition effect when the logo is hovered over, changing its color to `#00ff88`.
-- The styles are responsive, with padding adjustments for screens smaller than 768px.
+None.
+
+#### Configuration
+
+None.
+
+#### Notes
+
+- The `.client-item` class uses `clamp` for responsive font sizing, ensuring logos scale appropriately across devices.
+- The `.client-item:hover` rule changes the logo color on hover for better interactivity.
+- Media query adjusts the padding for smaller screens to maintain readability.
 
 ### src/components/ClientLogos.jsx
 
@@ -615,29 +619,29 @@ This CSS file defines the styling rules for the client logos component. It ensur
 
 #### Module Overview
 
-The `ClientLogos.jsx` file is a React component designed to display a horizontally scrolling marquee of logos for clients who trust the company. This component is used to enhance the credibility of the company by showcasing well-known brands that utilize its services or products.
+This file defines a React component `ClientLogos` that displays a horizontally scrolling marquee of logos for clients who trust our services. It leverages GSAP for smooth animations and a custom hook `useMarquee` to handle the marquee effect.
 
 #### Dependencies
 
-| Dependency | Description |
-|------------|-------------|
-| `useEffect`, `useRef` | React hooks for managing side effects and references. |
-| `gsap` | GreenSock Animation Platform for creating smooth animations. |
-| `useMarquee` | Custom hook for creating a marquee effect. |
-| `./ClientLogos.css` | CSS file for styling the component. |
+| Import | Purpose |
+| --- | --- |
+| `useEffect`, `useRef` from `react` | React hooks for side effects and ref management |
+| `gsap` from `gsap` | Animation library for creating smooth animations |
+| `useMarquee` from `../../utils/marquee` | Custom hook to handle the marquee effect |
+| `./ClientLogos.css` | CSS module for styling the component |
 
 #### Functions
 
 | Function | Parameters | Returns | Description |
-|----------|------------|---------|-------------|
-| `useMarquee` | None | { marqueeRef } | Custom hook that sets up a marquee effect using GSAP. |
+| --- | --- | --- | --- |
+| `ClientLogos` | None | JSX | React functional component that renders the client logos marquee |
 
-#### Notes / Edge Cases
+#### Notes
 
-- Ensure that the `marquee` class in the CSS file is properly styled to support the marquee effect.
-- The `clients` array should be kept up-to-date with the current clients to reflect accurate branding.
-- The `marqueeRef` should be correctly assigned to the marquee container to enable the animation.
-- The `gsap` animation duration and easing can be adjusted based on the desired speed and smoothness of the marquee effect.
+- The `useMarquee` hook is responsible for cloning the marquee content and setting up the GSAP animation.
+- The `clients` array contains the names of the clients. This should be updated as needed to reflect the current list of clients.
+- Ensure the CSS module `ClientLogos.css` is properly linked to style the component as intended.
+- The marquee effect is set to run indefinitely with a duration of 30 seconds for each cycle. Adjust the `duration` in the `gsap.to` call if a different speed is desired.
 
 ### src/components/Contact.css
 
@@ -647,41 +651,31 @@ The `ClientLogos.jsx` file is a React component designed to display a horizontal
 
 #### Module Overview
 
-The `Contact.css` file contains the CSS styles for the Contact component, which is used to display contact information and links. This file ensures the component is visually appealing and responsive across different devices.
+This file contains CSS styles for the `Contact` component, which is used to display contact information and social media links in a visually appealing way.
 
 #### Dependencies
 
-- None
+There are no external dependencies in this file. It solely contains CSS rules.
 
 #### Classes
 
 | Class | Purpose | Key Methods |
 |-------|---------|-------------|
-| `.contact` | Styles the main container for the contact information. | `min-height`, `display`, `align-items`, `justify-content`, `padding`, `position`, `background` |
-| `.contact-content` | Styles the content area within the contact container. | `text-align`, `max-width`, `position`, `z-index` |
-| `.contact-title` | Styles the title of the contact section. | `font-size`, `font-weight`, `margin-bottom`, `background`, `-webkit-background-clip`, `-webkit-text-fill-color`, `background-clip`, `line-height` |
-| `.contact-subtitle` | Styles the subtitle of the contact section. | `font-size`, `color`, `margin-bottom`, `line-height` |
-| `.contact-links` | Styles the container for contact links. | `display`, `flex-direction`, `gap`, `margin-bottom` |
-| `.contact-link` | Styles individual contact links. | `font-size`, `color`, `text-decoration`, `transition`, `display`, `font-weight`, `position` |
-| `.contact-link::before` | Styles the pseudo-element for the hover effect on contact links. | `content`, `position`, `bottom`, `left`, `transform`, `width`, `height`, `background`, `transition` |
-| `.contact-link:hover` | Styles the hover state of contact links. | `color`, `transform` |
-| `.contact-link:hover::before` | Styles the hover state of the pseudo-element for contact links. | `width` |
-| `.social-links` | Styles the container for social links. | `display`, `gap`, `justify-content`, `flex-wrap` |
-| `.social-link` | Styles individual social links. | `color`, `text-decoration`, `font-size`, `letter-spacing`, `transition`, `position`, `padding`, `border`, `border-radius`, `font-weight` |
-| `.social-link:hover` | Styles the hover state of social links. | `color`, `background`, `border-color`, `transform`, `box-shadow` |
-| `.contact-footer` | Styles the footer of the contact section. | `padding-top`, `margin-top`, `border-top`, `color`, `font-size` |
+| `.contact` | Styles the main container for the contact section. | N/A |
+| `.contact-content` | Centers and limits the width of the contact content. | N/A |
+| `.contact-title` | Styles the main title with a gradient text effect. | N/A |
+| `.contact-subtitle` | Styles the subtitle text. | N/A |
+| `.contact-links` | Styles the container for contact links. | N/A |
+| `.contact-link` | Styles individual contact links with hover effects. | N/A |
+| `.social-links` | Styles the container for social media links. | N/A |
+| `.social-link` | Styles individual social media links with hover effects. | N/A |
+| `.contact-footer` | Styles the footer of the contact section. | N/A |
 
-#### Media Queries
+#### Notes
 
-| Media Query | Purpose |
-|-------------|---------|
-| `@media (max-width: 768px)` | Adjusts styles for devices with a maximum width of 768px. |
-
-#### Notes / Edge Cases
-
-- The `contact-link` and `social-link` classes have hover effects that change the color and add animations.
-- The media query ensures the component is responsive and adjusts padding, font sizes, and gaps for smaller screens.
-- The use of `clamp`, `vw`, and responsive units ensures the text scales appropriately across different devices.
+- The gradient text effect in `.contact-title` uses `-webkit-background-clip` and `background-clip` properties for cross-browser compatibility.
+- The hover effects on `.contact-link` and `.social-link` change the color, position, and background properties to provide visual feedback.
+- Media queries are used to adjust the layout for smaller screens, ensuring the design is responsive.
 
 ### src/components/Contact.jsx
 
@@ -691,54 +685,63 @@ The `Contact.css` file contains the CSS styles for the Contact component, which 
 
 #### Module Overview
 
-The `Contact.jsx` file defines a React component for a contact section of a website. This component displays a call-to-action message, an email address, and links to social media profiles. It also includes an animation effect that triggers when the section comes into view, enhancing the user experience.
+This file defines a React component for a contact section on a webpage. It includes animated text and social links, and leverages GSAP for smooth scroll animations.
 
 #### Dependencies
 
-| Import/Dependency | Description |
-|-------------------|-------------|
+| Import | Purpose |
+|--------|---------|
 | `useEffect`, `useRef` | React hooks for managing side effects and references. |
-| `gsap` | GreenSock Animation Platform for creating animations. |
-| `ScrollTrigger` | GSAP plugin for scroll-based animations. |
-| `./Contact.css` | CSS file for styling the contact section. |
+| `gsap`, `ScrollTrigger` | GSAP animation library and its ScrollTrigger plugin for scroll-based animations. |
+| `./Contact.css` | CSS module for styling the contact section. |
 
 #### Functions
 
 | Function | Parameters | Returns | Description |
 |----------|------------|---------|-------------|
-| `useEffect` | - | - | Sets up an animation effect when the component mounts and cleans up on unmount. |
+| `Contact` | None | JSX for the contact section | The main React component for the contact section. |
 
-#### Notes / Edge Cases
+#### Notes
 
-- Ensure that the `gsap` and `ScrollTrigger` libraries are installed and imported correctly.
-- The email address and social media links should be updated to reflect the actual contact information.
-- The animation effect is triggered when the content comes into view, which may not work as expected if the content is not visible in the viewport.
+- The `useEffect` hook is used to trigger GSAP animations when the component mounts.
+- The `useRef` hook is used to reference DOM elements for animations.
+- The `gsap.context` method is used to scope the GSAP animations to the component, ensuring they are cleaned up when the component unmounts.
+- The CSS module `./Contact.css` should be reviewed for any custom styles applied to the contact section.
+- Ensure the GSAP library and its ScrollTrigger plugin are installed in the project dependencies.
 
 ### src/components/Cursor.css
 
 #### Overview
 
-# Cursor.css Documentation
+# Module Overview
 
-#### Module Overview
-
-This CSS file defines the styles for the cursor component, which is used to enhance the user experience by providing a dynamic cursor that follows the user's mouse movements. The cursor consists of two elements: a base cursor and a follower cursor that appears with a border around it to highlight interactions.
+This file defines the CSS styles for the cursor component, which enhances the user interaction by providing visual feedback on hover interactions. It includes styles for a primary cursor and a follower cursor that tracks the mouse movement.
 
 #### Dependencies
 
-- None
+This file does not import any external dependencies.
 
 #### Classes
 
-| Class          | Purpose                                              | Key Methods |
-|----------------|------------------------------------------------------|-------------|
-| `.cursor`      | Base cursor element, always visible                   | N/A         |
-| `.cursor-follower` | Enhanced cursor that appears on user interactions | N/A         |
+| Class         | Purpose                  | Key Methods |
+|---------------|--------------------------|-------------|
+| `.cursor`      | Primary cursor style     | N/A         |
+| `.cursor-follower` | Follower cursor style | N/A         |
 
-#### Notes / Edge Cases
+#### Functions
 
-- On screens with a width of 768px or less, both cursors are hidden to improve mobile usability.
-- The `mix-blend-mode: difference` property ensures that the cursor blends differently with the background, enhancing visibility during interactions.
+This file does not contain any functions.
+
+#### Configuration or Constants
+
+This file does not define any configuration or constants.
+
+#### Notes
+
+- The `.cursor` class represents the main cursor, which is small and white.
+- The `.cursor-follower` class represents a larger, border-styled cursor that follows the mouse.
+- Both cursors are positioned fixed and use `mix-blend-mode: difference` for a unique visual effect.
+- On screens smaller than 768px, both cursors are hidden to avoid clutter on mobile devices.
 
 ### src/components/Cursor.jsx
 
@@ -746,146 +749,151 @@ This CSS file defines the styles for the cursor component, which is used to enha
 
 # Cursor.jsx
 
-#### Module Overview
-
-The `Cursor.jsx` file defines a custom cursor component for the application. This component enhances the user experience by providing a custom cursor animation that follows the mouse movements and changes its appearance on interactive elements such as links, buttons, and project cards. The component leverages the GSAP library for smooth animations and React hooks for managing the cursor's state and effects.
+This file creates a custom cursor component that enhances user interaction by adding a smooth, animated cursor effect.
 
 #### Dependencies
 
-| Dependency | Description |
-|------------|-------------|
+| Import | Purpose |
+|--------|---------|
 | `useEffect`, `useRef` | React hooks for managing side effects and references. |
-| `gsap` | GreenSock Animation Platform for creating smooth animations. |
-| `./Cursor.css` | CSS file for styling the cursor and its follower. |
+| `gsap` | A JavaScript library for animations. |
+| `./Cursor.css` | Styles for the cursor and its follower. |
+
+#### Classes
+
+| Class | Purpose | Key Methods |
+|-------|---------|-------------|
+| None | This file does not define any classes. |
 
 #### Functions
 
 | Function | Parameters | Returns | Description |
 |----------|------------|---------|-------------|
-| `Cursor` | N/A | JSX | Custom cursor component that animates the cursor and its follower. |
+| `Cursor` | None | JSX for the cursor component | The main function that sets up the cursor effect. |
 
-#### Notes / Edge Cases
+#### Notes
 
-- Ensure that the CSS file `Cursor.css` is properly linked and contains the necessary styles for the cursor and its follower.
-- The component should be used within a React application that has the GSAP library installed.
-- The interactive elements (links, buttons, project cards) should have the appropriate class names or selectors for the event listeners to function correctly.
+- The `Cursor` component uses `useRef` to create references for the cursor and its follower.
+- The `useEffect` hook sets up event listeners for mouse movements and interactions with specific elements.
+- The `gsap` library is used to animate the cursor and its follower.
+- Ensure that the CSS file `Cursor.css` is properly linked and contains the necessary styles for the cursor elements.
+- The cursor effect is only applied to elements with the `a`, `button`, and `.project-card` selectors. Adjust these selectors as needed for your application.
 
 ### src/components/Experience.css
 
 #### Overview
 
-# Experience.css Documentation
+# `src/components/Experience.css`
 
 #### Module Overview
 
-The `Experience.css` file contains the CSS styles for the Experience component, which is used to display a timeline of professional experiences. This file defines the visual layout and design of the timeline, including the positioning, spacing, and appearance of each timeline item.
+This file defines the CSS styles for the `Experience` component, which is used to display a timeline of professional experiences. It includes styles for the overall layout, timeline elements, and responsive adjustments.
 
 #### Dependencies
 
-- None
+There are no external dependencies in this CSS file. It is self-contained and relies solely on the class names defined within.
 
 #### Classes
 
 | Class | Purpose | Key Methods |
 |-------|---------|-------------|
-| `.experience` | Sets the minimum height, padding, background color, and position of the experience section. | N/A |
-| `.experience-container` | Limits the maximum width and centers the container. | N/A |
-| `.timeline` | Styles the timeline container, including padding. | N/A |
-| `.timeline-line` | Styles the vertical line of the timeline. | N/A |
-| `.timeline-item` | Styles the individual timeline items, including positioning and display properties. | N/A |
-| `.timeline-item.left` | Styles the left-aligned timeline items. | N/A |
-| `.timeline-item.right` | Styles the right-aligned timeline items. | N/A |
-| `.timeline-content` | Styles the content box of each timeline item, including background, border, padding, and transition effects. | N/A |
-| `.timeline-content:hover` | Defines the hover state for the timeline content box. | N/A |
-| `.timeline-year` | Styles the year text within each timeline item. | N/A |
-| `.timeline-role` | Styles the role text within each timeline item. | N/A |
-| `.timeline-company` | Styles the company text within each timeline item. | N/A |
-| `.timeline-description` | Styles the description text within each timeline item. | N/A |
-| `.timeline-tech` | Styles the technology tags within each timeline item. | N/A |
-| `.tech-tag` | Styles the individual technology tags. | N/A |
-| `.timeline-dot` | Styles the dot that marks each timeline item. | N/A |
+| `.experience` | Sets the main container's minimum height, padding, background, and positioning. | N/A |
+| `.experience-container` | Centers the content within a maximum width. | N/A |
+| `.timeline` | Styles the timeline container with padding. | N/A |
+| `.timeline-line` | Creates the vertical line for the timeline with a gradient background. | N/A |
+| `.timeline-item` | Styles the individual timeline items with flexbox for alignment. | N/A |
+| `.timeline-item.left` | Aligns items to the right side of the timeline. | N/A |
+| `.timeline-item.right` | Aligns items to the left side of the timeline. | N/A |
+| `.timeline-content` | Styles the content box with background, border, padding, and transition effects. | N/A |
+| `.timeline-content:hover` | Adds hover effects to the content box. | N/A |
+| `.timeline-year` | Styles the year text with specific font properties. | N/A |
+| `.timeline-role` | Styles the role title with specific font properties. | N/A |
+| `.timeline-company` | Styles the company name with specific font properties. | N/A |
+| `.timeline-description` | Styles the description text with specific font properties. | N/A |
+| `.timeline-tech` | Styles the container for technology tags with flexbox properties. | N/A |
+| `.tech-tag` | Styles individual technology tags with padding, background, border, and font properties. | N/A |
+| `.timeline-dot` | Styles the dot that marks each timeline point. | N/A |
 
-#### Notes / Edge Cases
+#### Media Queries
 
-- Ensure that the HTML structure of the Experience component matches the CSS selectors used in this file.
-- The responsive design adjustments for screens with a maximum width of 768px are handled within the media query.
-- Customization of colors, spacing, and other design elements can be achieved by modifying the CSS properties in this file.
+| Media Query | Adjustments |
+|-------------|-------------|
+| `@media (max-width: 768px)` | Adjusts the layout for smaller screens, including the timeline line, item alignment, dot position, and experience padding. |
+
+#### Notes
+
+- The `.timeline-item.left` and `.timeline-item.right` classes are used to alternate the alignment of timeline items to create a zigzag effect.
+- The hover effect on `.timeline-content` enhances the user experience by providing visual feedback when interacting with timeline items.
+- Responsive adjustments ensure the timeline looks good on both desktop and mobile devices.
 
 ### src/components/Experience.jsx
 
 #### Overview
 
-# Module Overview
+# Experience.jsx
 
-The `src/components/Experience.jsx` file defines a React component that displays a timeline of professional experience. This component leverages GSAP for animations and is designed to present a visually engaging and interactive experience section on a personal or professional portfolio website.
+This file defines the `Experience` component, which displays a timeline of professional experiences using animations powered by GSAP.
 
-# Dependencies
+#### Dependencies
 
-| Dependency | Description |
-|------------|-------------|
-| `useEffect`, `useRef` | React hooks for managing side effects and references. |
-| `gsap` | GreenSock Animation Platform for creating animations. |
-| `ScrollTrigger` | GSAP plugin for scroll-based animations. |
-| `./Experience.css` | CSS module for styling the experience section. |
+| Import | Purpose |
+| :--- | :--- |
+| `useEffect`, `useRef` from `react` | React hooks for managing side effects and references |
+| `gsap` from `gsap` | Core GSAP library for animations |
+| `ScrollTrigger` from `gsap/ScrollTrigger` | GSAP plugin for scroll-based animations |
+| `./Experience.css` | CSS module for styling the component |
 
-# Functions
+#### Functions
 
 | Function | Parameters | Returns | Description |
-|----------|------------|---------|-------------|
-| `Experience` | None | JSX for the experience section | A functional React component that renders a timeline of professional experience with animations. |
+| :--- | :--- | :--- | :--- |
+| `Experience` | None | JSX for the Experience component | Renders the experience timeline with animations |
 
-# Notes / Edge Cases
+#### Configuration
 
-- Ensure that the `gsap` and `ScrollTrigger` libraries are installed and imported correctly to avoid runtime errors.
-- The `experienceData` array should be kept up-to-date with the latest professional experiences.
-- The CSS module `./Experience.css` should be reviewed and adjusted to match the desired design and layout.
-- The component relies on GSAP animations, which may not be supported on all browsers. Test across different browsers for compatibility.
-- The `useEffect` hook ensures that animations are properly cleaned up when the component is unmounted to prevent memory leaks.
+- `experienceData`: An array of objects, each representing a professional experience with properties like `year`, `role`, `company`, `description`, and `tech`.
+
+#### Notes
+
+- The `useEffect` hook sets up scroll-triggered animations for the timeline items and the timeline line itself.
+- The `useRef` hook is used to reference DOM elements for GSAP animations.
+- The `gsap.context` method is used to scope the animations, ensuring they are properly cleaned up when the component unmounts.
 
 ### src/components/FeaturedWork.css
 
 #### Overview
 
-# src/components/FeaturedWork.css
+# Module Overview
 
-#### Module Overview
+The `src/components/FeaturedWork.css` file defines the styling for the `FeaturedWork` component, which is used to highlight specific projects or works on the website. This CSS file ensures that the featured work section has a visually appealing layout with responsive design elements.
 
-The `src/components/FeaturedWork.css` file contains CSS styles for the Featured Work component. This component is designed to showcase selected projects or works in a visually appealing manner, providing a prominent display for key projects on the company's website. The CSS file ensures a consistent and modern look across different screen sizes and devices.
+# Dependencies
 
-#### Dependencies
+There are no key imports in this CSS file. It is a standalone stylesheet for the `FeaturedWork` component.
 
-- None
-
-#### Classes
+# Classes
 
 | Class | Purpose | Key Methods |
 |-------|---------|-------------|
-| `.featured-work` | Sets the minimum height, display properties, padding, and background gradient for the featured work section. | N/A |
-| `.featured-container` | Defines the maximum width, margin, display properties, grid layout, gap, and alignment for the featured work container. | N/A |
-| `.featured-image` | Styles the featured image with positioning, border-radius, and overflow properties. | N/A |
-| `.featured-image img` | Ensures the image takes up the full width, maintains aspect ratio, and applies a transition effect. | N/A |
-| `.featured-image:hover img` | Adds a scaling effect to the image on hover. | N/A |
-| `.image-glow` | Creates a glowing effect around the image with a radial gradient and animation. | N/A |
-| `.featured-text` | Sets the display properties, direction, and gap for the featured text container. | N/A |
-| `.featured-label` | Styles the label text with font size, color, text transformation, letter spacing, and font weight. | N/A |
-| `.featured-title` | Defines the font size, weight, line height, and responsive behavior for the featured title. | N/A |
-| `.featured-description` | Styles the description text with font size, color, and line height. | N/A |
-| `.featured-tags` | Sets the display properties, wrapping behavior, and gap for the featured tags container. | N/A |
-| `.featured-tags span` | Styles the individual tags with padding, background, border, border-radius, font size, color, and font weight. | N/A |
-| `.featured-btn` | Defines the padding, background, text color, border, border-radius, font weight, font size, cursor, and transition properties for the featured button. | N/A |
-| `.featured-btn:hover` | Adds a hover effect with translation and box shadow for the featured button. | N/A |
+| `.featured-work` | Sets the overall layout and background for the featured work section. | N/A |
+| `.featured-container` | Defines the container for the featured work with a responsive grid layout. | N/A |
+| `.featured-image` | Styles the image container with a border radius and overflow handling. | N/A |
+| `.featured-image img` | Ensures the image scales correctly and transitions smoothly on hover. | N/A |
+| `.image-glow` | Adds a glowing effect to the image with a rotating animation. | N/A |
+| `.featured-text` | Styles the text content within the featured work section. | N/A |
+| `.featured-label` | Styles the label text with specific font and color properties. | N/A |
+| `.featured-title` | Styles the main title with responsive font sizing. | N/A |
+| `.featured-description` | Styles the description text with specific font and color properties. | N/A |
+| `.featured-tags` | Styles the container for tags with flexbox properties. | N/A |
+| `.featured-tags span` | Styles the individual tags with specific background, border, and font properties. | N/A |
+| `.featured-btn` | Styles the button with specific background, color, and transition properties. | N/A |
+| `.featured-btn:hover` | Adds hover effects to the button, including a shadow and translation. | N/A |
 
-#### Media Query
+# Notes
 
-| Media Query | Purpose |
-|-------------|---------|
-| `@media (max-width: 1024px)` | Adjusts the grid layout, gap, and padding for smaller screen sizes. |
-
-#### Notes / Edge Cases
-
-- Ensure images used with the `.featured-image` class have appropriate dimensions to maintain aspect ratio.
-- The glowing effect (`.image-glow`) may not be visible on all devices or browsers; test across different platforms.
-- The responsive behavior of the `.featured-title` class is designed for screens up to 1024px in width; additional breakpoints may be necessary for larger screens.
+- The `@media` query at the end of the file ensures that the layout adjusts for screens smaller than 1024px, changing the grid layout and padding.
+- The `transform` and `transition` properties are used to create smooth animations and interactions.
+- The `clamp()` function in the `.featured-title` class provides responsive font sizing that adjusts based on the viewport width.
 
 ### src/components/FeaturedWork.jsx
 
@@ -893,29 +901,38 @@ The `src/components/FeaturedWork.css` file contains CSS styles for the Featured 
 
 # Module Overview
 
-The `src/components/FeaturedWork.jsx` file defines a React component named `FeaturedWork` that showcases a featured project with an animated image and text. This component is designed to be used within a larger application to highlight a specific project on the website, providing a visually appealing and interactive experience for the visitors.
+`src/components/FeaturedWork.jsx` is a React component that displays a featured project with animated entrance effects using GSAP. It's used to highlight a specific project on the website with engaging animations when the user scrolls into view.
 
-# Dependencies
+#### Dependencies
 
-| Dependency | Description |
+| Import | Description |
 | --- | --- |
-| `useEffect`, `useRef` | React hooks for managing side effects and references. |
-| `gsap` | GreenSock Animation Platform for creating animations. |
-| `ScrollTrigger` | GSAP plugin for triggering animations on scroll. |
+| `{ useEffect, useRef }` from'react' | React hooks for managing side effects and references to DOM elements. |
+| `gsap` from 'gsap' | GreenSock Animation Platform for creating animations. |
+| `ScrollTrigger` from 'gsap/ScrollTrigger' | GSAP plugin for triggering animations based on scroll position. |
 | `./FeaturedWork.css` | CSS module for styling the component. |
 
-# Functions
+#### Classes
+
+| Class | Purpose | Key Methods |
+| --- | --- | --- |
+| `FeaturedWork` | Main React functional component for the featured work section. | N/A |
+
+#### Functions
 
 | Function | Parameters | Returns | Description |
 | --- | --- | --- | --- |
-| `FeaturedWork` | None | JSX for the component | The main React functional component that renders the featured work section. |
+| N/A | N/A | N/A | N/A |
 
-# Notes / Edge Cases
+#### Configuration
 
-- Ensure that the GSAP library and its ScrollTrigger plugin are installed in the project.
-- The image and text animations are triggered when the component comes into view while scrolling.
-- The component relies on the presence of specific CSS classes for styling, which are defined in the `FeaturedWork.css` file.
-- The image source URL is hardcoded in the component. For production, consider using a dynamic source or a configuration file.
+There are no explicit configuration options in this file. The animations are hardcoded with specific values for duration, scale, opacity, etc.
+
+#### Notes
+
+- The animations are set up to trigger when the elements come into view while scrolling.
+- The `revert` method from GSAP's context is used to clean up animations when the component unmounts.
+- Ensure the CSS file `FeaturedWork.css` is properly linked and contains the necessary styles for the component to render correctly.
 
 ### src/components/Footer.css
 
@@ -925,69 +942,63 @@ The `src/components/FeaturedWork.jsx` file defines a React component named `Feat
 
 #### Module Overview
 
-The `Footer.css` file defines the styling for the footer component of the application. This file ensures that the footer has a consistent look and feel across all pages, providing a cohesive user experience. It includes styles for the footer's background, padding, typography, and responsive design.
+This file defines the CSS styles for the footer component of our application. It ensures the footer is visually consistent and responsive across different devices.
 
 #### Dependencies
 
-There are no imports or external dependencies for this CSS file.
+There are no key imports in this file. It is a standalone CSS file.
 
 #### Classes
 
 | Class | Purpose | Key Methods |
 |-------|---------|-------------|
-| `.footer` | Styles the main footer container. | `background`, `padding`, `border-top` |
-| `.footer-container` | Centers the footer content and limits its maximum width. | `max-width`, `margin` |
-| `.footer-cta` | Styles the call-to-action section within the footer. | `text-align`, `margin-bottom` |
-| `.footer-title` | Styles the footer title with a gradient background and transparent text. | `font-size`, `font-weight`, `margin-bottom`, `background`, `-webkit-background-clip`, `-webkit-text-fill-color` |
-| `.footer-subtitle` | Styles the footer subtitle. | `font-size`, `color`, `margin-bottom` |
-| `.footer-btn` | Styles the footer button with hover effects. | `padding`, `background`, `color`, `border`, `border-radius`, `font-weight`, `font-size`, `cursor`, `transition` |
-| `.footer-btn:hover` | Styles the footer button on hover. | `transform`, `box-shadow` |
-| `.footer-content` | Styles the content grid within the footer. | `display`, `grid-template-columns`, `gap`, `margin-bottom` |
-| `.footer-col h3`, `.footer-col h4` | Styles the headings within the footer columns. | `margin-bottom`, `color` |
-| `.footer-col p`, `.footer-col a` | Styles the paragraphs and links within the footer columns. | `display`, `color`, `text-decoration`, `margin-bottom`, `transition` |
-| `.footer-col a:hover` | Styles the links within the footer columns on hover. | `color` |
-| `.footer-bottom` | Styles the bottom section of the footer. | `display`, `justify-content`, `padding-top`, `border-top`, `color`, `font-size` |
+| `.footer` | Styles the main footer container. | N/A |
+| `.footer-container` | Centers the footer content and limits its maximum width. | N/A |
+| `.footer-cta` | Styles the call-to-action section in the footer. | N/A |
+| `.footer-title` | Styles the footer title with a gradient text effect. | N/A |
+| `.footer-subtitle` | Styles the footer subtitle. | N/A |
+| `.footer-btn` | Styles the footer button with hover effects. | N/A |
+| `.footer-content` | Styles the grid layout for the footer content. | N/A |
+| `.footer-col` | Styles the columns within the footer content. | N/A |
+| `.footer-bottom` | Styles the footer's bottom section with responsive adjustments. | N/A |
 
-#### Media Query
+#### Configuration
 
-| Media Query | Purpose |
-|-------------|---------|
-| `@media (max-width: 768px)` | Adjusts the footer styles for smaller screen sizes. |
+There are no specific configurations in this file.
 
-#### Notes / Edge Cases
+#### Notes
 
-- The footer's background color is set to black (`#000`).
-- The footer title uses a gradient background with `-webkit-background-clip` and `-webkit-text-fill-color` for a transparent text effect.
-- The button styles include hover effects to provide visual feedback to users.
-- The footer content grid adjusts its layout for smaller screens using a media query.
+- The `background-clip` and `text-fill-color` properties in `.footer-title` are used to create a gradient text effect.
+- The `transition` property is used for smooth hover effects on buttons and links.
+- Media queries are used to adjust the layout for smaller screens, ensuring the footer remains responsive.
 
 ### src/components/Footer.jsx
 
 #### Overview
 
-# Footer Component Documentation
+# Footer.jsx
 
 #### Module Overview
 
-The `src/components/Footer.jsx` file defines the `Footer` component, which is a reusable footer section for the website. This component includes a call-to-action, developer information, links to various sections, social media links, contact information, and copyright details. It exists to provide a consistent and visually appealing footer across the entire application.
+The `Footer.jsx` file defines a React component that renders the footer section of the website. It includes a call-to-action, links to various sections of the site, social media links, and contact information.
 
 #### Dependencies
 
-| Dependency | Description |
-|------------|-------------|
-| `./Footer.css` | CSS file for styling the footer component. |
+| Import | Purpose |
+| --- | --- |
+| `./Footer.css` | Styles for the footer component |
 
 #### Functions
 
 | Function | Parameters | Returns | Description |
-|----------|------------|---------|-------------|
-| `Footer` | None | JSX for the footer component | Renders the footer section of the website. |
+| --- | --- | --- | --- |
+| `Footer` | None | JSX for the footer component | Renders the footer with various sections and links |
 
-#### Notes / Edge Cases
+#### Notes
 
-- Ensure that the CSS file `Footer.css` is correctly linked and loaded to apply the necessary styles.
-- The links and contact information should be updated as needed to reflect the current information.
-- The component is designed to be responsive and should be tested on various devices to ensure proper display.
+- The footer component is a simple presentational component, meaning it does not manage state or handle events.
+- All links and text are hardcoded in this file. For dynamic content, consider passing props or using context.
+- The CSS file `Footer.css` should be reviewed for styling details and customization options.
 
 ### src/components/Hero.css
 
@@ -997,135 +1008,148 @@ The `src/components/Footer.jsx` file defines the `Footer` component, which is a 
 
 #### Module Overview
 
-The `Hero.css` file contains the CSS styles for the Hero component, which is a prominent section typically found on the landing page of a website. This component is designed to capture the user's attention with a visually appealing layout, including a centered title, subtitle, and call-to-action buttons. The styles ensure responsiveness and adaptability across various screen sizes.
+This file contains CSS styles for the `Hero` component, which is a full-viewport height section typically used for the landing page's main visual presentation. It includes styles for centering content, creating a gradient text effect, and responsive button layouts.
 
 #### Dependencies
 
-- None
+There are no direct imports in this CSS file. It relies on the HTML structure defined in the `Hero` component.
 
 #### Classes
 
-| Class              | Purpose                                                                 | Key Methods |
-|--------------------|-------------------------------------------------------------------------|-------------|
-| `.hero`            | Styles the main container for the Hero section.                         | N/A         |
-| `.hero-canvas`     | Styles the canvas element within the Hero section.                     | N/A         |
-| `.hero-content`    | Styles the content wrapper inside the Hero section.                      | N/A         |
-| `.hero-title`      | Styles the main title within the Hero section.                          | N/A         |
-| `.word`            | Styles individual words within the title for gradient effect.           | N/A         |
-| `.hero-subtitle`   | Styles the subtitle within the Hero section.                            | N/A         |
-| `.hero-cta`        | Styles the call-to-action buttons within the Hero section.              | N/A         |
-| `.btn-primary`     | Styles the primary call-to-action button.                               | N/A         |
-| `.btn-secondary`   | Styles the secondary call-to-action button.                             | N/A         |
-| `.scroll-indicator` | Styles the scroll indicator within the Hero section.                   | N/A         |
-| `.mouse`           | Styles the mouse icon within the scroll indicator.                      | N/A         |
+| Class | Purpose | Key Methods |
+|-------|---------|-------------|
+| `.hero` | Styles the main container of the hero section. | N/A |
+| `.hero-canvas` | Styles the canvas element within the hero section. | N/A |
+| `.hero-content` | Styles the content container within the hero section. | N/A |
+| `.hero-title` | Styles the title text within the hero section. | N/A |
+| `.word` | Styles individual words within the title for gradient effect. | N/A |
+| `.hero-subtitle` | Styles the subtitle text within the hero section. | N/A |
+| `.hero-cta` | Styles the call-to-action container within the hero section. | N/A |
+| `.btn-primary`, `.btn-secondary` | Styles primary and secondary buttons within the hero section. | N/A |
+| `.scroll-indicator`, `.mouse` | Styles the scroll indicator within the hero section. | N/A |
 
-#### Notes / Edge Cases
+#### Notes
 
-- The gradient effect on the title words may not render correctly on older browsers that do not support the `background-clip` and `text-fill-color` properties.
-- Ensure that the `@keyframes` animation for the scroll indicator is supported across all target browsers.
-- The media query for screens with a maximum width of 768px ensures that the layout adapts for smaller screens, but additional testing may be required for specific devices.
+- The `perspective` property on `.hero-title` is used to create a 3D effect on the text.
+- The gradient text effect is achieved using `-webkit-background-clip` and `background-clip` properties.
+- The scroll indicator animation is defined using the `@keyframes` rule.
+- Responsive design is handled using media queries to adjust layout on smaller screens.
 
 ### src/components/Hero.jsx
 
 #### Overview
 
-# Module Overview
+# src/components/Hero.jsx
 
-The `src/components/Hero.jsx` file defines the `Hero` component, which serves as the main visual and interactive element on the homepage of the website. This component utilizes WebGL for canvas animations and GSAP for smooth text animations, creating an engaging and dynamic introduction to the site. It is designed to capture the visitor's attention and provide a glimpse into the creative and technical capabilities of the company.
+#### Module Overview
 
-# Dependencies
+This file defines the `Hero` component, which is the main visual element on the homepage. It includes an animated title, a canvas for particle effects, and a call-to-action section.
 
-| Dependency | Description |
-|------------|-------------|
-| `react` | Core React library for building UI components. |
-| `gsap` | GreenSock Animation Platform for creating animations. |
-| `useCanvasAnimation` | Custom hook for canvas animations located in `../../utils/canvasAnimation`. |
+#### Dependencies
+
+| Import | Description |
+| :--- | :--- |
+| `{ useEffect, useRef }` from `react` | React hooks for managing side effects and references. |
+| `gsap` | A JavaScript library for animations. |
+| `useCanvasAnimation` from `../../utils/canvasAnimation` | Custom hook for canvas animations. |
 | `./Hero.css` | CSS module for styling the Hero component. |
 
-# Functions
+#### Functions
 
 | Function | Parameters | Returns | Description |
-|----------|------------|---------|-------------|
-| `useCanvasAnimation` | `canvasRef` | N/A | Custom hook that initializes and animates particles on a canvas element. |
+| :--- | :--- | :--- | :--- |
+| `Hero` | None | JSX for the Hero component | Renders the Hero section with animated title and canvas animation. |
 
-# Notes / Edge Cases
+#### Classes
 
-- Ensure that the `canvas` element is properly referenced and accessible in the DOM to avoid runtime errors.
-- The animations may not render correctly on browsers that do not support the HTML5 canvas or WebGL.
-- The `useCanvasAnimation` hook should be used with caution as it may impact performance on lower-end devices due to the high number of particles and continuous animation loop.
+This file does not define any classes.
+
+#### Notes
+
+- The `useEffect` hook in the `Hero` component triggers an animation for the title words using GSAP.
+- The `useCanvasAnimation` hook sets up a particle effect on the canvas element.
+- Ensure that the CSS file `Hero.css` is correctly linked for proper styling.
+- The `canvasRef` is used to access the canvas element for animations.
 
 ### src/components/Marquee.css
 
 #### Overview
 
-# Marquee.css Documentation
+# Marquee.css
 
-#### Module Overview
-
-This CSS file defines the styles for a marquee component, which is used to display scrolling text or images in a continuous horizontal or vertical motion. The marquee section features a gradient background, and the marquee items are styled to ensure readability and visual appeal.
+This file defines the CSS styles for the Marquee component, providing the visual layout and appearance for scrolling text or images.
 
 #### Dependencies
 
-- None
+No dependencies are imported in this file.
 
 #### Classes
 
-| Class          | Purpose                                                                                           | Key Methods |
-|----------------|--------------------------------------------------------------------------------------------------|-------------|
-| .marquee-section | Container for the marquee with padding and gradient background.                                   | N/A         |
-|.marquee       | Flex container to display marquee content without wrapping.                                      | N/A         |
-|.marquee-content | Flex container for aligning marquee items vertically and adding right padding.                  | N/A         |
-|.marquee-item   | Individual item within the marquee with specific font size, weight, color, and spacing.         | N/A         |
-|.marquee-dot    | Decorative dot element between marquee items with margin, font size, and opacity.                | N/A         |
+| Class           | Purpose                                              | Key Methods |
+|-----------------|------------------------------------------------------|------------|
+| `.marquee-section` | Styles the section containing the marquee. | N/A        |
+| `.marquee`       | The container for the marquee content. | N/A        |
+| `.marquee-content` | Flex container for the marquee items. | N/A        |
+| `.marquee-item`   | Styles individual items within the marquee. | N/A        |
+| `.marquee-dot`    | Styles dots that may be used within the marquee. | N/A        |
 
-#### Notes / Edge Cases
+#### Functions
 
-- Ensure that the container of the `.marquee` has sufficient width to accommodate the entire marquee content.
-- The `font-size` of `.marquee-item` is responsive, scaling with the viewport width.
-- The `.marquee-dot` is semi-transparent and may not be visible on all backgrounds.
+No functions are defined in this file.
+
+#### Configuration
+
+No configuration options are provided in this file.
+
+#### Notes
+
+- The `.marquee` class uses `display: flex` and `white-space: nowrap` to create a horizontal, continuously scrolling layout.
+- The `.marquee-item` class uses `clamp` for responsive font sizing, ensuring text scales appropriately across different screen sizes.
+- The `will-change: transform` property on `.marquee` hints at potential animations, indicating that this element may be transformed in the future.
+- The `.marquee-section` has a background gradient to visually distinguish the marquee section from other parts of the UI.
 
 ### src/components/Marquee.jsx
 
 #### Overview
 
-# Marquee.jsx Documentation
+# `src/components/Marquee.jsx`
 
 #### Module Overview
 
-This file defines a React component named `Marquee` that renders a horizontally scrolling list of skills. The marquee effect is achieved using the GSAP animation library for smooth, continuous scrolling.
+This file defines a `Marquee` component that displays a scrolling list of skills using GSAP for animation. It creates a continuous loop of skill items that move from right to left.
 
 #### Dependencies
 
-| Import | Library | Purpose |
-|--------|---------|---------|
-| `useEffect, useRef` | React | Hooks for lifecycle management and reference to DOM elements |
-| `gsap` | GSAP | Library for animations |
-| `Marquee.css` | Local | Styles for the marquee component |
+| Import | Purpose |
+| --- | --- |
+| `useEffect`, `useRef` | React hooks for side effects and referencing DOM elements. |
+| `gsap` | GreenSock Animation Platform for animating the marquee. |
+| `./Marquee.css` | Component-specific styles. |
 
 #### Classes
 
 | Class | Purpose | Key Methods |
-|-------|---------|------------|
-| Marquee | Marquee component | N/A |
+| --- | --- | --- |
+| `Marquee` | Marquee component | None |
 
 #### Functions
 
 | Function | Parameters | Returns | Description |
-|----------|------------|---------|------------|
-| N/A | N/A | N/A | No standalone functions are defined in this file. |
+| --- | --- | --- | --- |
+| `Marquee` | None | None | Renders a scrolling list of skills. |
 
-#### Configuration
+#### Configuration or Constants
 
-| Variable | Type | Default Value | Description |
-|----------|------|---------------|-------------|
-| `skills` | Array | `['React', 'Three.js', 'GSAP', 'WebGL', 'Node.js', 'TypeScript', 'Next.js', 'Tailwind', 'Framer Motion', 'Blender', 'Figma', 'WebAssembly']` | Array of skills to be displayed in the marquee. |
+| Constant | Purpose |
+| --- | --- |
+| `skills` | Array of skills to display in the marquee. |
 
-#### Notes / Edge Cases
+#### Notes
 
-- The marquee continuously scrolls indefinitely, with cloned content ensuring a seamless loop.
-- The `useEffect` hook runs once after the component mounts, initializing the animation.
-- The animation duration is set to 20 seconds, which can be adjusted for different scrolling speeds.
-- Ensure `Marquee.css` is correctly linked to apply the necessary styles for the marquee effect.
+- The `useEffect` hook initializes the marquee animation.
+- The `gsap.to` method animates the marquee content to scroll infinitely.
+- The `cloneNode(true)` method is used to create a duplicate of the marquee content for the continuous loop effect.
+- Ensure `Marquee.css` contains appropriate styles for the marquee and its items.
 
 ### src/components/Navbar.css
 
@@ -1135,114 +1159,105 @@ This file defines a React component named `Marquee` that renders a horizontally 
 
 #### Module Overview
 
-The `src/components/Navbar.css` file is responsible for styling the navigation bar component of our application. It ensures that the navbar is visually appealing, responsive, and consistent across different devices and screen sizes. This file defines the appearance and layout of the navbar, including its positioning, colors, typography, and responsive behavior.
+This file defines the styles for the navigation bar component, ensuring it is consistently rendered across different devices and screen sizes.
 
 #### Dependencies
 
-- None
+There are no key imports in this CSS file. It is a standalone stylesheet.
 
 #### Classes
 
-| Class             | Purpose                                                                 | Key Methods |
-|-------------------|-------------------------------------------------------------------------|-------------|
-| `.navbar`         | Styles the main navigation bar container.                              | N/A         |
-| `.nav-logo`       | Styles the logo within the navigation bar.                              | N/A         |
-| `.nav-links`     | Styles the container for navigation links.                              | N/A         |
-| `.nav-links a`   | Styles the individual navigation links.                                | N/A         |
-| `.nav-cta`       | Styles the call-to-action button within the navigation bar.             | N/A         |
+| Class          | Purpose                                      | Key Methods |
+|----------------|----------------------------------------------|-------------|
+| `.navbar`      | Styles the main navigation bar.             | N/A         |
+| `.nav-logo`    | Styles the logo within the navigation bar.  | N/A         |
+| `.nav-links`   | Styles the navigation links container.      | N/A         |
+| `.nav-links a` | Styles the individual navigation links.    | N/A         |
+| `.nav-cta`     | Styles the call-to-action button.           | N/A         |
 
-#### Notes / Edge Cases
+#### Configuration
 
-- The navbar is designed to be fixed at the top of the page, ensuring it remains visible as users scroll.
-- The navigation links change color on hover to provide visual feedback to users.
-- The call-to-action button scales up and adds a shadow effect on hover to draw attention.
-- The navigation links are hidden on screens smaller than 768px to improve the mobile experience.
+There are no specific configurations in this file. It contains only CSS rules.
+
+#### Notes
+
+- The navigation bar is fixed at the top of the page and spans the full width of the viewport.
+- The `.nav-links` container is hidden on screens smaller than 768px, making the navigation responsive.
+- The `.nav-cta` button scales up and adds a shadow effect on hover for a subtle animation.
+- Ensure that the HTML elements using these classes are correctly applied for the styles to take effect.
 
 ### src/components/Navbar.jsx
 
 #### Overview
 
-# Navbar.jsx Documentation
+# `src/components/Navbar.jsx`
 
 #### Module Overview
 
-The `Navbar.jsx` file defines a React component for the navigation bar of the application. It is responsible for rendering the main navigation elements and includes an animation for a smooth entrance effect using GSAP.
+This file defines a `Navbar` component that renders a navigation bar with a logo, links, and a call-to-action button. It includes an animation using GSAP for a smooth entrance effect.
 
 #### Dependencies
 
 | Import | Purpose |
 | --- | --- |
-| `useEffect, useRef` | React hooks for side effects and referencing DOM elements. |
-| `gsap` | A powerful JavaScript animation library used for the navigation bar entrance animation. |
-| `Navbar.css` | CSS file containing styles for the navigation bar. |
+| `{ useEffect, useRef }` | React hooks for lifecycle management and referencing DOM elements. |
+| `gsap` | A powerful animation library used to animate the navbar. |
+| `./Navbar.css` | CSS file for styling the navbar. |
 
 #### Classes
 
 | Class | Purpose | Key Methods |
 | --- | --- | --- |
-| `.navbar` | Main container for the navigation bar. | N/A |
-| `.nav-logo` | Styles for the navigation bar logo. | N/A |
-| `.nav-links` | Styles for the navigation links container. | N/A |
-| `.nav-cta` | Styles for the navigation call-to-action button. | N/A |
+| `navRef` | Reference to the navbar DOM element | N/A |
 
 #### Functions
 
 | Function | Parameters | Returns | Description |
 | --- | --- | --- | --- |
-| `Navbar` | None | JSX element | The main navigation bar component with animated entrance effect. |
+| `Navbar` | None | JSX element | Renders the navbar with animated entrance effect |
 
-#### Configuration / Constants
+#### Notes
 
-There are no configuration constants defined in this file.
-
-#### Notes / Edge Cases
-
-- The navigation bar animation is triggered only once when the component mounts due to the empty dependency array in the `useEffect` hook.
-- Ensure that the `Navbar.css` file is correctly linked and contains the necessary styles for the navigation bar to render correctly.
-- The navigation links are static and point to hash fragments (`#work`, `#about`, `#contact`). Ensure corresponding sections exist in the application for these links to function correctly.
+- The `useEffect` hook initializes an animation using GSAP when the component mounts.
+- The `navRef` is used to target the navbar element for the animation.
+- The navbar includes links to different sections of the page (`#work`, `#about`, `#contact`).
+- The animation delays the entrance by 0.5 seconds and takes 1 second to complete.
 
 ### src/components/ProcessSection.css
 
 #### Overview
 
-# src/components/ProcessSection.css
+# Module Overview
 
-#### Module Overview
+The `src/components/ProcessSection.css` file defines the styles for the process section component, ensuring a visually appealing and responsive layout for displaying a multi-step process.
 
-The `ProcessSection.css` file contains CSS styles for the process section of the application. This file is responsible for defining the visual appearance and layout of the process steps, ensuring a consistent and visually appealing presentation across different devices and screen sizes.
+# Dependencies
 
-#### Dependencies
+There are no direct imports in this CSS file. It stands alone and provides styling for the process section component.
 
-- **None**
-
-#### Classes
+# Classes
 
 | Class | Purpose | Key Methods |
 |-------|---------|-------------|
-| `.process-section` | Defines the overall section for the process, including padding, background, and minimum height. | N/A |
-| `.process-container` | Centers the process container and sets its maximum width. | N/A |
-| `.process-line` | Creates a horizontal line with a gradient background, positioned in the middle of the process section. | N/A |
-| `.process-steps` | Sets up a grid layout for the process steps, defining the number of columns and spacing. | N/A |
-| `.process-step` | Styles each individual process step, including background, border, padding, and transition effects. | N/A |
-| `.step-number` | Styles the step number, including font size, weight, color, and opacity. | N/A |
-| `.step-title` | Styles the step title, including font size and weight. | N/A |
-| `.step-description` | Styles the step description, including font size, color, and line height. | N/A |
+| `.process-section` | Sets the overall layout and background for the process section. | N/A |
+| `.process-container` | Centers the content and sets a maximum width. | N/A |
+| `.process-line` | Creates a horizontal line with a gradient effect. | N/A |
+| `.process-steps` | Defines a grid layout for the process steps. | N/A |
+| `.process-step` | Styles each step with padding, background, border, and transition effects. | N/A |
+| `.step-number` | Styles the step number with specific font properties. | N/A |
+| `.step-title` | Styles the step title with specific font properties. | N/A |
+| `.step-description` | Styles the step description with specific font properties. | N/A |
 
-#### Media Queries
+# Configuration
 
-| Media Query | Purpose |
-|-------------|---------|
-| `@media (max-width: 1024px)` | Adjusts the grid layout for process steps to two columns and hides the process line. |
-| `@media (max-width: 768px)` | Adjusts the padding of the process section and changes the grid layout for process steps to a single column. |
+No specific configuration is required for this CSS file. It is designed to be used directly with the corresponding HTML structure.
 
-#### Notes / Edge Cases
+# Notes
 
-- The `.process-section` class ensures that the section has a minimum height of 100 viewport height (vh), providing a full-screen effect.
-- The `.process-container` class centers the container and limits its maximum width to 1400px.
-- The `.process-line` class uses a linear gradient background to create a horizontal line with a smooth color transition.
-- The `.process-steps` class uses a CSS grid layout to arrange the process steps, with responsive adjustments for different screen sizes.
-- The `.process-step` class includes hover effects to change the background color, border color, and apply a slight upward translation.
-- The media queries ensure that the layout adapts to different screen sizes, providing an optimal viewing experience on both desktop and mobile devices.
+- The hover effect on `.process-step` elements changes the background color and border color, and slightly lifts the element.
+- Media queries adjust the layout for different screen sizes, ensuring responsiveness.
+- The gradient background in `.process-section` and `.process-line` provides a visually distinct look.
+- Ensure the HTML structure matches the class names used in this CSS file for proper styling.
 
 ### src/components/ProcessSection.jsx
 
@@ -1252,133 +1267,119 @@ The `ProcessSection.css` file contains CSS styles for the process section of the
 
 #### Module Overview
 
-The `ProcessSection.jsx` file is a React component that visually represents a multi-step process. It is designed to display a series of steps in a visually appealing manner, utilizing animations to enhance user engagement. This component is particularly useful for showcasing workflows, project stages, or any sequential process.
+This file defines the `ProcessSection` component, which displays a multi-step process in a visually engaging way using animations triggered by scrolling. It's used to showcase the development process in a clear and interactive manner.
 
 #### Dependencies
 
-| Dependency | Purpose |
-|------------|---------|
-| `useEffect`, `useRef` | React hooks for managing side effects and references. |
-| `gsap` | GreenSock Animation Platform for creating animations. |
-| `ScrollTrigger` | GSAP plugin for scroll-based animations. |
-| `./ProcessSection.css` | Custom CSS file for styling the component. |
+| Import | Purpose |
+| --- | --- |
+| `useEffect`, `useRef` from `react` | React hooks for managing side effects and references. |
+| `gsap` from `gsap` | GreenSock Animation Platform for creating animations. |
+| `ScrollTrigger` from `gsap/ScrollTrigger` | GSAP plugin for triggering animations based on scroll position. |
+| `./ProcessSection.css` | CSS module for styling the component. |
 
 #### Classes
 
-| Class | Purpose | Key Methods |
-|-------|---------|-------------|
-| `ProcessSection` | React functional component to render the process section. | N/A |
+There are no classes in this file.
 
 #### Functions
 
-| Function | Parameters | Returns | Description |
-|---------|------------|---------|-------------|
-| N/A | N/A | N/A | N/A |
+There are no standalone functions in this file.
 
 #### Configuration
 
-| Configuration | Description |
-|---------------|-------------|
-| `steps` | An array of objects, each representing a step in the process. |
+The `steps` array contains the data for each step of the process, including the number, title, and description.
 
-#### Notes / Edge Cases
+#### Notes
 
-- Ensure that the `gsap` and `ScrollTrigger` libraries are properly installed and imported.
-- The `useEffect` hook is used to initialize animations when the component mounts and clean up on unmount.
-- The `ref` attributes are crucial for targeting elements in the DOM for animations.
-- Custom CSS is applied to style the process section and its steps. Ensure that the CSS file is correctly linked and loaded.
+- The `useEffect` hook sets up animations when the component mounts and cleans up when it unmounts.
+- The `gsap.context` method is used to scope the animations to the component, ensuring they are properly cleaned up.
+- The `ref` attributes are used to reference DOM elements for animations.
+- The `scrollTrigger` configuration in GSAP controls when the animations start and end based on the scroll position.
 
 ### src/components/Projects.css
 
 #### Overview
 
-# **src/components/Projects.css**
+# src/components/Projects.css
 
 #### Module Overview
 
-The `Projects.css` file is responsible for styling the projects section of our application. It defines the visual layout, animations, and responsive design for the project cards and their components. This file ensures a consistent and engaging user experience across different devices.
+This CSS file styles the projects section of our application, including the background, project cards, and animations.
 
 #### Dependencies
 
-- None (Pure CSS)
+None. This file is pure CSS.
 
 #### Classes
 
-| Class             | Purpose                                                                                           | Key Properties                                                                                      |
-|-------------------|---------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
-| `.projects`       | Container for the projects section                                                                | `height`, `position`, `overflow`, `background`                                                      |
-| `.projects-bg`    | Background for the projects section                                                               | `position`, `top`, `left`, `width`, `height`, `overflow`                                            |
-| `.warp-lines`     | Animated background lines for the projects section                                                | `position`, `top`, `left`, `width`, `height`, `background`, `animation`                             |
-| `.projects-container` | Flex container for project cards                                                                 | `display`, `gap`, `padding`, `height`, `align-items`, `will-change`                                 |
-| `.project-card`   | Individual project card                                                                           | `position`, `min-width`, `height`, `background`, `border`, `border-radius`, `overflow`, `transform-style`, `transition`, `backdrop-filter`, `will-change` |
-| `.project-card:hover` | Hover effects for project card                                                                   | `border-color`, `transform`, `box-shadow`                                                           |
-| `.rocket-trail`   | Animated rocket trail effect for project card                                                     | `position`, `top`, `left`, `width`, `height`, `background`, `transform`, `filter`, `opacity`, `pointer-events`, `z-index` |
-| `.card-image`     | Container for project card image                                                                  | `position`, `top`, `left`, `width`, `height`, `overflow`                                            |
-| `.card-image img` | Image within the project card                                                                     | `width`, `height`, `object-fit`, `transition`                                                       |
-| `.project-card:hover.card-image img` | Hover effect for project card image                                                             | `transform`                                                                                         |
-| `.card-overlay`   | Overlay for the project card                                                                      | `position`, `bottom`, `left`, `width`, `height`, `background`                                       |
-| `.card-content`   | Content area within the project card                                                              | `position`, `bottom`, `left`, `width`, `padding`, `z-index`                                         |
-| `.card-number`    | Number display within the project card                                                            | `font-size`, `font-weight`, `color`, `line-height`, `display`, `margin-bottom`, `opacity`, `font-family` |
-| `.card-title`     | Title display within the project card                                                             | `font-size`, `font-weight`, `margin-bottom`, `color`, `text-transform`, `letter-spacing`            |
-| `.card-category`  | Category display within the project card                                                          | `font-size`, `color`, `text-transform`, `letter-spacing`, `margin-bottom`, `font-weight`            |
-| `.card-description` | Description display within the project card                                                      | `color`, `line-height`, `margin-bottom`, `font-size`                                                |
-| `.card-footer`    | Footer area within the project card                                                               | `display`, `justify-content`, `align-items`                                                         |
-| `.card-button`    | Button within the project card                                                                    | `background`, `border`, `color`, `padding`, `border-radius`, `cursor`, `font-size`, `font-weight`, `letter-spacing`, `transition`, `display`, `align-items`, `gap`, `text-transform` |
-| `.card-button:hover` | Hover effect for the project card button                                                         | `transform`, `box-shadow`                                                                           |
-| `.card-button svg` | SVG icon within the project card button                                                           | `transition`                                                                                        |
-| `.card-button:hover svg` | Hover effect for the SVG icon within the project card button                                   | `transform`                                                                                         |
+| Class              | Purpose                                                                                           | Key Properties                                                                                     |
+|--------------------|---------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
+| `.projects`        | Main container for the projects section                                                           | `height`, `position`, `overflow`, `background`                                                      |
+| `.projects-bg`     | Background for the projects section                                                               | `position`, `top`, `left`, `width`, `height`, `overflow`                                            |
+| `.warp-lines`      | Animated background lines                                                                         | `position`, `top`, `left`, `width`, `height`, `background`, `animation`                            |
+| `.projects-container` | Flex container for project cards                                                                 | `display`, `gap`, `padding`, `height`, `align-items`, `will-change`                                |
+| `.project-card`    | Individual project card                                                                           | `position`, `min-width`, `height`, `background`, `border`, `border-radius`, `overflow`, `transform-style`, `transition`, `backdrop-filter`, `will-change` |
+| `.rocket-trail`    | Animated rocket trail effect                                                                      | `position`, `top`, `left`, `width`, `height`, `background`, `transform`, `filter`, `opacity`, `pointer-events`, `z-index` |
+| `.card-image`      | Container for project card image                                                                  | `position`, `top`, `left`, `width`, `height`, `overflow`                                            |
+| `.card-image img`  | Project card image                                                                                | `width`, `height`, `object-fit`, `transition`                                                       |
+| `.card-overlay`    | Overlay for project card                                                                          | `position`, `bottom`, `left`, `width`, `height`, `background`                                       |
+| `.card-content`    | Content container for project card                                                                | `position`, `bottom`, `left`, `width`, `padding`, `z-index`                                         |
+| `.card-number`     | Project card number                                                                               | `font-size`, `font-weight`, `color`, `line-height`, `display`, `margin-bottom`, `opacity`, `font-family` |
+| `.card-title`      | Project card title                                                                                | `font-size`, `font-weight`, `margin-bottom`, `color`, `text-transform`, `letter-spacing`             |
+| `.card-category`   | Project card category                                                                             | `font-size`, `color`, `text-transform`, `letter-spacing`, `margin-bottom`, `font-weight`             |
+| `.card-description`| Project card description                                                                          | `color`, `line-height`, `margin-bottom`, `font-size`                                                 |
+| `.card-footer`     | Footer for project card                                                                           | `display`, `justify-content`, `align-items`                                                          |
+| `.card-button`     | Button within project card                                                                        | `background`, `border`, `color`, `padding`, `border-radius`, `cursor`, `font-size`, `font-weight`, `letter-spacing`, `transition`, `display`, `align-items`, `gap`, `text-transform` |
+| `.card-button:hover`| Hover state for project card button                                                              | `transform`, `box-shadow`                                                                           |
+| `.card-button svg` | SVG within project card button                                                                    | `transition`                                                                                        |
+| `.card-button:hover svg` | Hover state for SVG within project card button                                                 | `transform`                                                                                         |
 
-#### Configuration / Constants
+#### Media Queries
 
-- `--card-color`: Custom property used for consistent color theming across elements.
+| Query                  | Purpose                                                                                           | Key Properties                                                                                     |
+|------------------------|---------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
+| `(max-width: 768px)`   | Adjusts styles for smaller screens                                                               | `.projects-container`, `.project-card`, `.card-content`, `.card-title`                             |
 
-#### Notes / Edge Cases
+#### Notes
 
-- Ensure that images used within `.card-image` are properly sized to avoid layout shifts.
-- The `@keyframes warpSpeed` animation may need adjustments based on performance considerations on lower-end devices.
-- The responsive design adjustments within the media query should be tested across various screen sizes to ensure consistency.
+- The `will-change` property is used on `.projects-container` and `.project-card` to hint at the browser that these elements will be animated, improving performance.
+- The `warpSpeed` animation is applied to `.warp-lines` to create a dynamic background effect.
+- The `.project-card` uses `transform-style: preserve-3d` to enable 3D transformations.
+- Ensure any new styles added maintain consistency with existing design patterns.
 
 ### src/components/Projects.jsx
 
 #### Overview
 
-# Projects.jsx Module Overview
+# src/components/Projects.jsx
 
-The `Projects.jsx` file is a React component that displays a collection of project cards with animated transitions. It utilizes the GSAP library for animations and ScrollTrigger for scroll-based animations. This component is designed to showcase various projects with engaging visual effects, making it an essential part of the projects section on the website.
+#### Module Overview
+
+This file defines the `Projects` component, which displays a horizontally scrollable section showcasing various projects. Each project card features an image, title, category, and description, with animations triggered on scroll.
 
 #### Dependencies
 
-| Dependency | Version | Description |
-|------------|---------|-------------|
-| React      | ^17.0.2 | JavaScript library for building user interfaces |
-| GSAP        | ^3.10.4 | JavaScript library for animations |
-| GSAP ScrollTrigger | ^3.10.4 | GSAP plugin for scroll-based animations |
-| Projects.css | N/A | Custom CSS file for styling the project cards |
-
-#### Classes
-
-| Class | Purpose | Key Methods |
-|-------|---------|-------------|
-| `Projects` | React functional component for displaying project cards with animations | N/A |
+| Import | Purpose |
+|--------|---------|
+| `useEffect`, `useRef` | React hooks for managing side effects and references. |
+| `gsap` | GreenSock Animation Platform for creating complex animations. |
+| `ScrollTrigger` | GSAP plugin for triggering animations based on scroll position. |
+| `./Projects.css` | CSS module for styling the component. |
 
 #### Functions
 
 | Function | Parameters | Returns | Description |
 |----------|------------|---------|-------------|
-| N/A | N/A | N/A | N/A |
+| `Projects` | None | JSX for the projects section | The main component that renders the projects. |
 
-#### Configuration / Constants
+#### Notes
 
-| Constant | Value | Description |
-|----------|-------|-------------|
-| `projectsData` | Array of project objects | Data for the projects to be displayed |
-
-#### Notes / Edge Cases
-
-- Ensure that the GSAP and ScrollTrigger libraries are properly installed and imported.
-- The `projectsData` array should be kept up-to-date with the latest projects.
-- The animations may need to be adjusted based on the screen size and content length.
-- Test the component thoroughly to ensure that the animations work as expected on different devices and browsers.
+- The `useEffect` hook sets up GSAP animations that trigger as the user scrolls through the projects section.
+- The `cardsRef` and `containerRef` refs are used to manipulate the DOM elements directly for animations.
+- The `projectsData` array contains the data for each project, including title, category, description, color, and image URL.
+- Each project card has a unique animation based on its index, creating a dynamic scrolling effect.
+- Clean up the GSAP animations on component unmount to prevent memory leaks.
 
 ### src/components/Services.css
 
@@ -1388,41 +1389,33 @@ The `Projects.jsx` file is a React component that displays a collection of proje
 
 #### Module Overview
 
-The `Services.css` file contains the CSS styles for the services section of the application. It defines the layout, appearance, and responsive behavior of the services grid, service cards, and related elements. This file ensures a consistent and visually appealing presentation of services across different devices and screen sizes.
+This file defines the CSS styles for the services section of our application, ensuring a consistent and visually appealing layout across different devices.
 
 #### Dependencies
 
-- None
+There are no key imports in this CSS file. It stands alone and does not rely on external stylesheets or frameworks.
 
 #### Classes
 
 | Class | Purpose | Key Methods |
 |-------|---------|-------------|
-| `.services` | Sets the overall layout and background for the services section. | `min-height`, `padding`, `background`, `position` |
-| `.services-container` | Centers the services container and limits its maximum width. | `max-width`, `margin` |
-| `.services-header` | Styles the header of the services section. | `text-align`, `margin-bottom` |
-| `.section-description` | Defines the appearance of section descriptions. | `font-size`, `color`, `margin-top` |
-| `.services-grid` | Creates a responsive grid layout for the services. | `display`, `grid-template-columns`, `gap` |
-| `.service-card` | Styles the individual service cards. | `position`, `background`, `border`, `border-radius`, `padding`, `transition`, `overflow`, `cursor` |
-| `.service-card::before` | Adds a gradient effect to the service card. | `content`, `position`, `top`, `left`, `width`, `height`, `background`, `opacity`, `transition` |
-| `.service-card:hover` | Defines the hover state for the service card. | `border-color`, `box-shadow`, `transform` |
-| `.service-card:hover::before` | Changes the gradient effect on hover. | `opacity` |
-| `.service-icon` | Styles the service icons. | `font-size`, `margin-bottom`, `display`, `position`, `z-index` |
-| `.service-number` | Styles the service numbers. | `position`, `top`, `right`, `font-size`, `font-weight`, `color`, `font-family`, `z-index` |
-| `.service-title` | Styles the service titles. | `font-size`, `font-weight`, `color`, `margin-bottom`, `position`, `z-index` |
-| `.service-description` | Styles the service descriptions. | `font-size`, `color`, `line-height`, `position`, `z-index` |
-| `.service-arrow` | Styles the arrow icons for service cards. | `position`, `bottom`, `right`, `font-size`, `color`, `opacity`, `transform`, `transition` |
-| `.service-card:hover .service-arrow` | Defines the hover state for the service arrow. | `opacity`, `transform` |
+| `.services` | Sets the overall layout for the services section, including background color and padding. | N/A |
+| `.services-container` | Centers the content within the services section and limits its maximum width. | N/A |
+| `.services-header` | Styles the header of the services section, aligning text to the center and adding margin. | N/A |
+| `.section-description` | Styles the description text within the services section, setting font size and color. | N/A |
+| `.services-grid` | Defines a responsive grid layout for the service cards, with a minimum column width and gap. | N/A |
+| `.service-card` | Styles individual service cards, including background, border, padding, and hover effects. | N/A |
+| `.service-card::before` | Adds a gradient effect to the service card on hover. | N/A |
+| `.service-icon` | Styles the service icons, setting font size, margin, and display properties. | N/A |
+| `.service-number` | Styles the service number, setting position, font size, and color. | N/A |
+| `.service-title` | Styles the service title, setting font size, font weight, color, and margin. | N/A |
+| `.service-description` | Styles the service description, setting font size, color, and line height. | N/A |
+| `.service-arrow` | Styles the arrow icon within the service card, setting position, font size, color, and transitions. | N/A |
 
-#### Configuration
+#### Notes
 
-- None
-
-#### Notes / Edge Cases
-
-- Ensure that the `--service-color` CSS variable is defined in the root or parent components to maintain consistent styling.
-- The responsive behavior is designed for a maximum width of 768px. Adjustments may be needed for different breakpoints.
-- The `z-index` property is used to control the stacking order of elements within the service cards. Ensure that it is used judiciously to avoid overlapping issues.
+- The `var(--service-color)` custom property is used for the border color and gradient effect on hover. Ensure this variable is defined in your root CSS or theme settings.
+- The media query at the bottom adjusts the layout for smaller screens, ensuring the services section remains responsive and readable on mobile devices.
 
 ### src/components/Services.jsx
 
@@ -1432,35 +1425,35 @@ The `Services.css` file contains the CSS styles for the services section of the 
 
 #### Module Overview
 
-The `Services.jsx` file defines a React component that displays a section showcasing various services offered by the company. This component utilizes GSAP for animations and provides a visually appealing layout for the services data. It is designed to be a reusable component that can be easily integrated into the main application to present the services in an engaging manner.
+This file defines the `Services` component, which displays a section on the website showcasing various services offered. It uses GSAP for animations and React hooks for managing side effects and references.
 
 #### Dependencies
 
-| Dependency | Description |
-|------------|-------------|
+| Import | Purpose |
+| ------ | ------- |
 | `useEffect`, `useRef` | React hooks for managing side effects and references. |
 | `gsap` | GreenSock Animation Platform for creating animations. |
 | `ScrollTrigger` | GSAP plugin for scroll-based animations. |
 | `./Services.css` | CSS module for styling the component. |
 
+#### Classes
+
+There are no classes in this file.
+
 #### Functions
 
-| Function | Parameters | Returns | Description |
-|----------|------------|---------|-------------|
-| `Services` | None | JSX for the services section | The main React component that renders the services section. |
+There are no standalone functions in this file.
 
 #### Configuration
 
-| Key | Description |
-|-----|-------------|
-| `servicesData` | An array of objects, each representing a service with properties like `number`, `title`, `description`, `icon`, and `color`. |
+- `servicesData`: An array of objects, each representing a service with its number, title, description, icon, and color.
 
-#### Notes / Edge Cases
+#### Notes
 
-- Ensure that the `cardsRef` array is properly managed to avoid any reference issues.
-- The `useEffect` hook is used to set up and clean up GSAP animations, ensuring that there are no memory leaks.
-- The hover animations are added to each card element, which may need to be tested for performance on different devices.
-- The CSS module `./Services.css` should be reviewed to ensure that it aligns with the overall design system of the application.
+- The `useEffect` hook sets up animations for each service card when they come into view and on hover.
+- The `useRef` hook is used to reference the section and service cards for GSAP animations.
+- The `gsap.context` method is used to scope the animations and ensure they are cleaned up when the component unmounts.
+- CSS variables are used to dynamically set the color of each service card.
 
 ### src/components/ShowcaseGallery.css
 
@@ -1470,148 +1463,132 @@ The `Services.jsx` file defines a React component that displays a section showca
 
 #### Module Overview
 
-The `ShowcaseGallery.css` file provides the styling for the Showcase Gallery component, which is used to display a grid of gallery items with hover effects. This CSS file ensures a visually appealing and responsive layout for showcasing images in a gallery format.
+This file defines the styles for the `ShowcaseGallery` component, which is used to display a grid of images in a visually appealing manner. The CSS ensures a responsive layout that adapts to different screen sizes, providing a consistent user experience.
 
 #### Dependencies
 
-There are no imports or external dependencies for this CSS file.
+There are no direct imports in this CSS file, but it relies on the HTML structure defined in the `ShowcaseGallery` component.
 
 #### Classes
 
 | Class | Purpose | Key Methods |
 |-------|---------|-------------|
-| `.showcase-gallery` | Sets the minimum height, padding, and background gradient for the gallery. | N/A |
-| `.showcase-container` | Centers the gallery container and sets the maximum width. | N/A |
+| `.showcase-gallery` | Sets the overall style for the gallery, including background and padding. | N/A |
+| `.showcase-container` | Centers the gallery container on the page. | N/A |
 | `.gallery-grid` | Defines the grid layout for the gallery items. | N/A |
-| `.gallery-item` | Styles the individual gallery items, including positioning, aspect ratio, border radius, and cursor. | N/A |
-| `.gallery-item img` | Ensures images within gallery items cover the entire area and adds a transition effect. | N/A |
-| `.gallery-overlay` | Creates an overlay effect on hover with a semi-transparent background and centered content. | N/A |
-| `.gallery-overlay h3` | Styles the text within the overlay. | N/A |
+| `.gallery-item` | Styles each gallery item, including aspect ratio and border radius. | N/A |
+| `.gallery-item img` | Ensures images cover the entire item and transition smoothly on hover. | N/A |
+| `.gallery-overlay` | Creates an overlay effect on hover with a fade-in transition. | N/A |
+| `.gallery-overlay h3` | Styles the text overlay on hover. | N/A |
 
-#### Notes / Edge Cases
+#### Configuration
 
-- The `aspect-ratio` property used in `.gallery-item` may not be supported in older browsers. Consider fallbacks or polyfills if necessary.
-- The hover effects on `.gallery-item` and `.gallery-overlay` rely on CSS transitions. Ensure these transitions are smooth and performant across different devices.
-- The media query at `max-width: 768px` adjusts the layout for smaller screens, ensuring the gallery remains responsive and usable on mobile devices.
+### Media Queries
+
+- `@media (max-width: 768px)`: Adjusts the layout for smaller screens by changing padding and grid columns.
+
+#### Notes
+
+- The `aspect-ratio` property for `.gallery-item` ensures that all items maintain a consistent aspect ratio, which is crucial for a uniform look.
+- The `object-fit: cover` property for images ensures they cover the entire item without distortion.
+- The hover effects on `.gallery-item` and `.gallery-overlay` create a smooth transition, enhancing the user experience.
+- Responsive design considerations are handled via media queries to ensure the gallery looks good on all devices.
 
 ### src/components/ShowcaseGallery.jsx
 
 #### Overview
 
-# ShowcaseGallery.jsx
+# Module Overview
 
-#### Module Overview
+The `src/components/ShowcaseGallery.jsx` file defines a React component that displays a gallery of project showcases. It uses GSAP for animations and ScrollTrigger for scroll-based animations.
 
-The `ShowcaseGallery.jsx` file is a React component designed to display a gallery of project showcases. It leverages the GSAP animation library to animate the gallery items as they come into view. This component is essential for visually presenting project highlights in a dynamic and engaging manner on the company's website.
+# Dependencies
 
-#### Dependencies
+| Import | Purpose |
+| --- | --- |
+| `useEffect`, `useRef` from 'react' | React hooks for managing side effects and references. |
+| `gsap` from 'gsap' | Core GSAP library for animations. |
+| `ScrollTrigger` from 'gsap/ScrollTrigger' | GSAP plugin for scroll-based animations. |
+| `./ShowcaseGallery.css` | CSS module for styling the gallery. |
 
-| Dependency | Type | Description |
-|------------|------|-------------|
-| `useEffect`, `useRef` | React Hooks | Built-in React hooks for managing side effects and references. |
-| `gsap` | Library | GreenSock Animation Platform for creating animations. |
-| `ScrollTrigger` | Plugin | GSAP plugin for scroll-based animations. |
-| `./ShowcaseGallery.css` | CSS File | Custom styles for the Showcase Gallery component. |
-
-#### Classes
-
-| Class | Purpose | Key Methods |
-|-------|---------|-------------|
-| `ShowcaseGallery` | React Functional Component | Renders the gallery of project showcases with animations. |
-
-#### Functions
+# Functions
 
 | Function | Parameters | Returns | Description |
-|----------|------------|---------|-------------|
-| N/A | N/A | N/A | This file does not contain any standalone functions. |
+| --- | --- | --- | --- |
+| `ShowcaseGallery` | None | JSX for the gallery component | Renders the gallery with animated items as they scroll into view. |
 
-#### Configuration
+# Notes
 
-| Configuration | Description |
-|---------------|-------------|
-| `gallery` | An array of objects, each representing a project with an ID, image URL, and title. |
-
-#### Notes / Edge Cases
-
-- Ensure that the GSAP library and its `ScrollTrigger` plugin are properly installed and imported.
-- The `gallery` array should be kept up-to-date with the latest projects.
-- The `useEffect` hook is used to initialize the GSAP animations when the component mounts. It's important to clean up the animations when the component unmounts to prevent memory leaks.
-- The `ref` attributes are crucial for referencing the DOM elements and triggering animations. Ensure that the `ref` callbacks are correctly set up to avoid potential issues.
+- The `useEffect` hook sets up the GSAP animations when the component mounts and cleans them up on unmount.
+- The `itemsRef` ref is used to reference each gallery item for applying animations.
+- The `gallery` array contains the data for each project showcase, including the image URL and title.
+- Ensure that GSAP and ScrollTrigger are installed in your project dependencies.
 
 ### src/components/Skills.css
 
 #### Overview
 
-# Skills.css Module Overview
+# Skills.css
 
-The `Skills.css` file contains the styling rules for the skills section of the application. It defines the layout and appearance of the skills grid, individual skill items, and their interactive states. This file ensures a consistent and visually appealing presentation of user skills across different devices and screen sizes.
+#### Module Overview
+
+This file defines the CSS styles for the Skills component, which displays a grid of skill items with their respective levels. It ensures a consistent look and feel across different screen sizes.
 
 #### Dependencies
 
-- None
+There are no direct imports in this CSS file. It relies on the use of custom properties (CSS variables) such as `--skill-level` which should be defined elsewhere in the project.
 
 #### Classes
 
-| Class                | Purpose                                                                 | Key Methods |
-|----------------------|-------------------------------------------------------------------------|-------------|
-| `.skills`            | Defines the main container for the skills section.                      | N/A         |
-| `.skills-container`  | Sets the maximum width and full width for the skills container.           | N/A         |
-| `.skills-grid`       | Creates a responsive grid layout for the skills items.                   | N/A         |
-| `.skill-item`        | Styles individual skill items with hover effects.                        | N/A         |
-| `.skill-header`     | Styles the header section of each skill item.                            | N/A         |
-| `.skill-name`       | Styles the name of the skill.                                           | N/A         |
-| `.skill-level`      | Styles the level indicator of the skill.                                | N/A         |
-| `.skill-bar-container` | Container for the skill level bar.                                      | N/A         |
-| `.skill-bar`        | Styles the skill level bar with a gradient and shimmer effect.           | N/A         |
-| `.skill-bar::after` | Adds a shimmer effect to the skill level bar.                           | N/A         |
+| Class | Purpose | Key Methods |
+|-------|---------|-------------|
+| `.skills` | Container for the entire skills section. | N/A |
+| `.skills-container` | Limits the width of the skills section. | N/A |
+| `.skills-grid` | Defines the grid layout for the skill items. | N/A |
+| `.skill-item` | Styles each individual skill item. | N/A |
+| `.skill-item:hover` | Defines the hover state for skill items. | N/A |
+| `.skill-header` | Styles the header within each skill item. | N/A |
+| `.skill-name` | Styles the name of the skill. | N/A |
+| `.skill-level` | Styles the level indicator of the skill. | N/A |
+| `.skill-bar-container` | Container for the skill level bar. | N/A |
+| `.skill-bar` | Represents the skill level bar. | N/A |
+| `.skill-bar::after` | Adds a shimmering effect to the skill bar. | N/A |
 
-#### Configuration
+#### Notes
 
-- **Variable**: `--skill-level` - Custom property used to define the width of the skill level bar.
-
-#### Notes / Edge Cases
-
-- The `@media` query ensures that the skills grid adjusts for smaller screens, providing a responsive design.
-- The hover effects and animations enhance the user experience but should be tested for performance on various devices.
-- Custom properties like `--skill-level` should be defined in the root or relevant parent elements for proper application.
+- The `--skill-level` custom property must be defined in the HTML or JavaScript to set the width of the skill bar.
+- The `shimmer` animation is used to create a shimmering effect on the skill bar.
+- Media queries are used to adjust the layout for smaller screens (max-width: 768px).
 
 ### src/components/Skills.jsx
 
 #### Overview
 
-# Skills.jsx
+# Module Overview
 
-#### Module Overview
+The `src/components/Skills.jsx` file defines a React component that displays a section showcasing the team's skills and expertise. It leverages GSAP for animations and dynamically adjusts the skill bars based on the user's scroll position.
 
-The `Skills.jsx` file is a React component that displays a section showcasing the skills and expertise of the user. It utilizes the GSAP library for animations and ScrollTrigger for scroll-based animations. This component is designed to be a visually appealing and interactive way to present skill levels in a grid format.
+# Dependencies
 
-#### Dependencies
+| Import | Purpose |
+| --- | --- |
+| `{ useEffect, useRef }` from'react' | React hooks for managing side effects and references. |
+| `gsap` from 'gsap' | GreenSock Animation Platform for creating animations. |
+| `ScrollTrigger` from 'gsap/ScrollTrigger' | GSAP plugin for triggering animations based on scroll position. |
+| './Skills.css' | CSS module for styling the skills section. |
 
-| Dependency | Description |
-|------------|-------------|
-| `useEffect`, `useRef` | React hooks for managing side effects and references. |
-| `gsap` | GreenSock Animation Platform for creating animations. |
-| `ScrollTrigger` | GSAP plugin for scroll-based animations. |
-| `./Skills.css` | CSS file for styling the component. |
+# Functions
 
-#### Classes
+| Function | Parameters | Returns | Description |
+| --- | --- | --- | --- |
+| `Skills` | None | JSX for the skills section | Renders the skills section with animated skill bars. |
 
-There are no classes defined in this file.
+# Notes
 
-#### Functions
-
-There are no standalone functions defined in this file.
-
-#### Configuration
-
-There are no configuration settings or constants defined in this file.
-
-#### Notes / Edge Cases
-
-- Ensure that the `gsap` and `ScrollTrigger` libraries are properly installed and imported.
-- The `skillsData` array should be kept up-to-date with the latest skills and their respective levels.
-- The animation effects are triggered on scroll, so ensure that the component is visible in the viewport for the animations to play.
-- The `barsRef.current` array is populated during the render, so it's important to ensure that the `ref` callback is correctly assigned to each skill bar element.
+- The `useEffect` hook sets up the GSAP animations when the component mounts and cleans up on unmount.
+- The `barsRef` ref is used to reference each skill bar element for individual animations.
+- The `skillsData` array contains the skill names and their corresponding levels.
+- The `style` attribute in the skill bar div dynamically sets the width of the skill bar based on the skill level.
 
 ### src/components/SpaceshipProjects.css
 
@@ -1621,44 +1598,38 @@ There are no configuration settings or constants defined in this file.
 
 #### Module Overview
 
-The `SpaceshipProjects.css` file contains the CSS styles for the Spaceship Projects component. This file is responsible for styling the visual elements of the projects section, including the background, project cards, and interactive effects. It ensures a visually appealing and responsive layout that enhances the user experience.
+This file defines the CSS styles for the `SpaceshipProjects` component, which displays a collection of project cards with a dynamic background and interactive hover effects.
 
 #### Dependencies
 
-There are no external dependencies or imports for this CSS file.
+No external libraries or frameworks are imported in this file. It relies solely on CSS properties and selectors.
 
 #### Classes
 
 | Class | Purpose | Key Methods |
 |-------|---------|-------------|
-| `.spaceship-projects` | Sets the overall height, position, and background of the projects section. | N/A |
-| `.projects-bg` | Creates a repeating linear gradient background with an animation. | N/A |
-| `@keyframes warp` | Defines the animation for the background gradient. | N/A |
-| `.projects-container` | Styles the container for project cards with flexbox properties. | N/A |
-| `.project-card` | Styles the individual project cards with positioning, background, border, and transition effects. | N/A |
-| `.card-image` | Styles the image container within the project card. | N/A |
-| `.card-image img` | Styles the image within the project card with object-fit and transition effects. | N/A |
-| `.card-overlay` | Styles the overlay for the project card content. | N/A |
-| `.card-content` | Styles the content area within the project card. | N/A |
-| `.card-number` | Styles the project number within the project card. | N/A |
-| `.card-title` | Styles the project title within the project card. | N/A |
-| `.card-category` | Styles the project category within the project card. | N/A |
-| `.card-btn` | Styles the button within the project card. | N/A |
-| `.rocket-trail` | Styles the rocket trail effect within the project card. | N/A |
+| `.spaceship-projects` | Sets the main container for the spaceship projects section. | N/A |
+| `.projects-bg` | Creates a dynamic background effect for the projects section. | N/A |
+| `.projects-container` | Styles the container for the project cards. | N/A |
+| `.project-card` | Defines the appearance and behavior of individual project cards. | N/A |
+| `.card-image` | Styles the image container within each project card. | N/A |
+| `.card-overlay` | Adds an overlay effect to the bottom of each project card. | N/A |
+| `.card-content` | Styles the content area within each project card. | N/A |
+| `.card-number` | Styles the project number displayed in each card. | N/A |
+| `.card-title` | Styles the project title displayed in each card. | N/A |
+| `.card-category` | Styles the project category displayed in each card. | N/A |
+| `.card-btn` | Styles the button within each project card. | N/A |
+| `.rocket-trail` | Creates a rocket trail effect behind the project cards. | N/A |
 
-#### Media Query
+#### Configuration
 
-| Media Query | Purpose |
-|-------------|---------|
-| `@media (max-width: 768px)` | Adjusts the styles for smaller screen sizes to ensure responsiveness. |
+No specific configuration is required for this CSS file. It uses CSS variables like `--card-color` which should be defined in a parent scope or globally.
 
-#### Notes / Edge Cases
+#### Notes
 
-- The `@keyframes warp` animation is set to run infinitely, creating a continuous background effect.
-- The `transform: scale(1.05)` and `transform: translateX(10px)` properties are used to create hover effects on the project cards and button, respectively.
-- The `object-fit: cover` property ensures that images within the project cards maintain their aspect ratio while covering the entire container.
-- The `z-index` property is used to ensure that the content within the project cards appears above the background and image layers.
-- The media query adjusts the styles for smaller screen sizes to ensure the project cards and content remain visually appealing and readable.
+- The `@keyframes` rule `warp` is used to create a dynamic background effect for the projects section.
+- The `transform` and `transition` properties are used extensively to create smooth hover effects on the project cards.
+- Media queries are used to adjust the layout for smaller screen sizes.
 
 ### src/components/SpaceshipProjects.jsx
 
@@ -1668,167 +1639,173 @@ There are no external dependencies or imports for this CSS file.
 
 #### Module Overview
 
-The `SpaceshipProjects.jsx` file is a React component that displays a horizontally scrolling gallery of spaceship-themed project cards. Each card features an image, title, category, and an "Explore" button. The component leverages GSAP for animations and ScrollTrigger for scroll-based animations, providing a dynamic and engaging user experience.
+This file defines the `SpaceshipProjects` component, which displays a horizontally scrolling gallery of project cards with animated entrance effects as the user scrolls.
 
 #### Dependencies
 
-| Dependency | Type | Description |
-|------------|------|-------------|
-| `useEffect` | React Hook | Manages side effects in functional components. |
-| `useRef` | React Hook | Provides a way to reference DOM elements. |
-| `gsap` | Library | GreenSock Animation Platform for creating animations. |
-| `ScrollTrigger` | GSAP Plugin | Adds scroll-based animations. |
-| `./SpaceshipProjects.css` | CSS File | Contains styles for the component. |
+| Import | Purpose |
+| ------ | ------- |
+| `useEffect`, `useRef` | React hooks for managing side effects and references to DOM elements. |
+| `gsap` | GreenSock Animation Platform for creating complex animations. |
+| `ScrollTrigger` | GSAP plugin for triggering animations based on scroll position. |
+| `./SpaceshipProjects.css` | CSS module for styling the component. |
 
 #### Classes
 
-There are no classes defined in this file.
+| Class | Purpose | Key Methods |
+| ----- | ------- | ----------- |
+| `SpaceshipProjects` | Main React functional component for the project gallery. | N/A |
 
 #### Functions
 
-There are no standalone functions defined in this file.
+| Function | Parameters | Returns | Description |
+| -------- | ---------- | ------- | ----------- |
+| N/A | N/A | N/A | N/A |
 
-#### Notes / Edge Cases
+#### Configuration
 
-- Ensure that the GSAP library and ScrollTrigger plugin are installed in the project.
-- The `projects` array should be kept up-to-date with the latest projects.
-- The `useEffect` hook ensures that animations are properly set up and cleaned up.
-- The `cardsRef.current` array should be handled with care to avoid index mismatches.
-- The `sectionRef` and `containerRef` are used for scroll-based animations and should be referenced correctly.
+- `projects`: An array of project objects, each containing `id`, `title`, `category`, `image`, and `color`.
+
+#### Notes
+
+- The `useEffect` hook sets up the GSAP animations when the component mounts and cleans them up on unmount.
+- The `cardsRef` and `containerRef` are used to reference the individual project cards and the container for the horizontal scroll effect.
+- The animations are triggered by the `ScrollTrigger` plugin, which responds to the scroll position of the `sectionRef`.
+- Ensure the CSS module `./SpaceshipProjects.css` is properly linked for the styles to apply correctly.
 
 ### src/components/Stats.css
 
 #### Overview
 
-# src/components/Stats.css
+# Module Overview
 
-#### Module Overview
+`src/components/Stats.css` defines the styles for the statistics component, ensuring a consistent and visually appealing presentation across different screen sizes.
 
-The `Stats.css` file is responsible for styling the statistics components within the application. It provides a visually appealing and responsive layout for displaying various statistical data points. This file ensures that the statistics are presented in a consistent and user-friendly manner across different devices and screen sizes.
+# Dependencies
 
-#### Dependencies
+There are no direct imports in this CSS file. It relies solely on the class names defined within it.
 
-- None
+# Classes
 
-#### Classes
+| Class | Purpose | Key Methods |
+|-------|---------|-------------|
+| `.stats` | Styles the main container for the statistics section. | N/A |
+| `.stats-container` | Defines the layout and spacing of the statistics items. | N/A |
+| `.stat-item` | Styles individual statistic items, including hover effects. | N/A |
+| `.stat-number` | Formats the appearance of the statistic numbers. | N/A |
+| `.stat-label` | Styles the labels for the statistics. | N/A |
 
-| Class            | Purpose                                                                                     | Key Methods |
-|------------------|---------------------------------------------------------------------------------------------|-------------|
-| `.stats`         | Styles the main container for the statistics section.                                       | N/A         |
-| `.stats-container` | Defines the layout and grid structure for the statistics items.                             | N/A         |
-| `.stat-item`     | Styles individual statistic items, including padding, background, border, and hover effects. | N/A         |
-| `.stat-number`   | Styles the numerical value of the statistics, including font size and gradient background.   | N/A         |
-| `.stat-label`    | Styles the label for the statistics, including font size, color, and text transformation.  | N/A         |
+# Notes
 
-#### Media Query
-
-| Media Query       | Purpose                                                                                     | Key Methods |
-|------------------|---------------------------------------------------------------------------------------------|-------------|
-| `@media (max-width: 768px)` | Adjusts the layout and styling for smaller screens (e.g., mobile devices).                  | N/A         |
-
-#### Notes / Edge Cases
-
-- The `clamp()` function used in `.stat-number` ensures that the font size scales responsively based on the viewport width.
-- The `background-clip` and `text-fill-color` properties are used to create a gradient text effect.
-- The hover effects on `.stat-item` provide a subtle animation to enhance user interaction.
-- The media query ensures that the layout adapts to smaller screens, maintaining readability and usability.
+- The `background` property in `.stat-number` uses a linear gradient and text clipping to create a gradient text effect.
+- The `transition` property in `.stat-item` ensures smooth animations on hover.
+- Media queries are used to adjust the layout and padding for smaller screens.
 
 ### src/components/Stats.jsx
 
 #### Overview
 
-# Module Overview
+# src/components/Stats.jsx
 
-The `src/components/Stats.jsx` file defines a React component named `Stats`. This component is designed to display a set of statistics (e.g., projects completed, happy clients, etc.) with animated counting effects triggered by scrolling. It leverages the GSAP library for animations and ScrollTrigger for scroll-based animations.
+#### Module Overview
+
+This file defines the `Stats` component, which displays animated statistics on the webpage. It leverages the GSAP animation library to create smooth scrolling animations for the statistics as they come into view.
 
 #### Dependencies
 
-| Dependency | Description |
-|------------|-------------|
+| Import | Description |
+|--------|-------------|
 | `useEffect`, `useRef` | React hooks for managing side effects and references. |
-| `gsap` | GreenSock Animation Platform, a JavaScript library for animations. |
-| `ScrollTrigger` | A GSAP plugin for scroll-based animations. |
-| `./Stats.css` | CSS file for styling the component. |
+| `gsap` | The GreenSock Animation Platform, used for creating animations. |
+| `ScrollTrigger` | A GSAP plugin that links animations to scroll progress. |
+| `./Stats.css` | CSS file for styling the `Stats` component. |
 
 #### Functions
 
 | Function | Parameters | Returns | Description |
 |----------|------------|---------|-------------|
-| `Stats` | None | JSX | A React functional component that renders animated statistics. |
+| `Stats` | None | JSX for the `Stats` component | The main React functional component that renders the animated statistics. |
 
-#### Notes / Edge Cases
+#### Notes
 
-- Ensure that the `data-target` attribute on `.stat-number` elements is set to the desired final count.
-- The `useEffect` hook ensures that animations are properly cleaned up when the component is unmounted.
-- The `onUpdate` callback in the GSAP animation rounds up the current count and appends a '+' sign to the displayed number.
-- This component assumes that the CSS class names and structure are correctly defined in the accompanying `./Stats.css` file.
+- The `useEffect` hook sets up the animations when the component mounts and cleans them up on unmount.
+- The `useRef` hook is used to reference the `section` and `stat` elements for animation purposes.
+- The `gsap.context` method is used to scope the animations to the component, ensuring they are properly cleaned up.
+- The `data-target` attribute on each `.stat-number` element is used to determine the final value of the animation.
+- The `scrollTrigger` configuration in GSAP is used to trigger the animations when the elements scroll into view.
+- The `onUpdate` callback in GSAP is used to update the text content of the number during the animation.
 
 ### src/components/Testimonials.css
 
 #### Overview
 
-# Testimonials.css Documentation
+# Testimonials.css
 
 #### Module Overview
 
-The `src/components/Testimonials.css` file contains CSS styles for the Testimonials component, which is used to display customer testimonials on the website. This file ensures a consistent and visually appealing layout for the testimonials, including responsive design adjustments for different screen sizes.
+This file defines the CSS styles for the testimonials section of our application, ensuring a visually appealing and responsive layout for user testimonials.
 
 #### Dependencies
 
-There are no external dependencies for this CSS file. It is a standalone stylesheet.
+There are no direct imports in this CSS file, but it relies on the global styles and any other CSS files that are included in the project.
 
 #### Classes
 
 | Class | Purpose | Key Methods |
 |-------|---------|-------------|
-| `.testimonials` | Sets the overall layout and background for the testimonials section. | `min-height`, `padding`, `background`, `position` |
-| `.testimonials-container` | Centers the testimonials container within the page. | `max-width`, `margin` |
-| `.testimonials-grid` | Defines the grid layout for the testimonial cards. | `display`, `grid-template-columns`, `gap`, `margin-top` |
-| `.testimonial-card` | Styles the individual testimonial cards. | `position`, `background`, `border`, `border-radius`, `padding`, `transition`, `overflow` |
-| `.testimonial-card::before` | Adds a gradient overlay effect on hover. | `content`, `position`, `top`, `left`, `width`, `height`, `background`, `opacity`, `transition` |
-| `.testimonial-header` | Styles the header section of the testimonial card. | `display`, `align-items`, `gap`, `margin-bottom`, `position`, `z-index` |
-| `.testimonial-image` | Styles the profile image of the testimonial author. | `width`, `height`, `border-radius`, `object-fit`, `border` |
-| `.testimonial-info` | Container for the author's name and role. | `flex` |
-| `.testimonial-name` | Styles the author's name. | `font-size`, `font-weight`, `color`, `margin-bottom` |
-| `.testimonial-role` | Styles the author's role. | `font-size`, `color` |
-| `.testimonial-stars` | Styles the star rating. | `display`, `gap`, `margin-bottom`, `position`, `z-index` |
-| `.star` | Styles individual stars. | `color`, `font-size` |
-| `.testimonial-text` | Styles the testimonial text. | `color`, `line-height`, `font-size`, `position`, `z-index` |
-| `.quote-icon` | Styles the quote icon. | `position`, `bottom`, `right`, `font-size`, `color`, `font-family`, `line-height`, `pointer-events` |
+| `.testimonials` | Sets the overall layout and background for the testimonials section. | N/A |
+| `.testimonials-container` | Centers the testimonials container within the page. | N/A |
+| `.testimonials-grid` | Defines the grid layout for the testimonial cards. | N/A |
+| `.testimonial-card` | Styles individual testimonial cards, including hover effects. | N/A |
+| `.testimonial-card::before` | Adds a gradient overlay effect on hover. | N/A |
+| `.testimonial-header` | Styles the header section of each testimonial card. | N/A |
+| `.testimonial-image` | Styles the profile image of the testimonial author. | N/A |
+| `.testimonial-info` | Container for the author's name and role. | N/A |
+| `.testimonial-name` | Styles the author's name. | N/A |
+| `.testimonial-role` | Styles the author's role. | N/A |
+| `.testimonial-stars` | Styles the star rating. | N/A |
+| `.star` | Styles individual stars. | N/A |
+| `.testimonial-text` | Styles the testimonial text. | N/A |
+| `.quote-icon` | Styles the quote icon at the bottom of each testimonial card. | N/A |
 
-#### Notes / Edge Cases
+#### Configuration
 
-- The `.testimonial-card:hover` and `.testimonial-card:hover::before` selectors are used to create a hover effect on the testimonial cards.
-- The media query `@media (max-width: 768px)` adjusts the layout for smaller screens, ensuring the testimonials remain readable and visually appealing on mobile devices.
+No specific configuration is required for this CSS file. It should work out of the box with the provided styles.
+
+#### Notes
+
+- The hover effects on `.testimonial-card` and `.testimonial-card::before` are designed to provide a smooth transition and enhance user interaction.
+- The media queries ensure the testimonials section is responsive and adjusts properly on smaller screens.
+- Ensure any changes to the color scheme or layout are tested across different devices to maintain consistency.
 
 ### src/components/Testimonials.jsx
 
 #### Overview
 
-# Testimonials.jsx
+### Module Overview
 
-#### Module Overview
+`src/components/Testimonials.jsx` is a React component that displays a grid of client testimonials with animations. It leverages GSAP for animations and ScrollTrigger for scroll-based effects.
 
-The `Testimonials.jsx` file is a React component that displays client testimonials on the website. It utilizes GSAP for animations and ScrollTrigger for scroll-based animations. This component is designed to showcase positive feedback from clients, enhancing the credibility and appeal of the company.
+### Dependencies
 
-#### Dependencies
+| Import | Purpose |
+| --- | --- |
+| `{ useEffect, useRef }` from'react' | React hooks for managing side effects and references. |
+| `gsap` from 'gsap' | GSAP (GreenSock Animation Platform) for animations. |
+| `ScrollTrigger` from 'gsap/ScrollTrigger' | GSAP plugin for scroll-based animations. |
+| `./Testimonials.css` | CSS module for styling the testimonials component. |
 
-| Dependency | Description |
-|------------|-------------|
-| `useEffect`, `useRef` | React hooks for managing side effects and references. |
-| `gsap` | GreenSock Animation Platform for creating animations. |
-| `ScrollTrigger` | GSAP plugin for scroll-based animations. |
-| `./Testimonials.css` | CSS file for styling the testimonials component. |
-
-#### Functions
+### Functions
 
 | Function | Parameters | Returns | Description |
-|----------|------------|---------|-------------|
-| `Testimonials` | None | JSX | A React component that renders the testimonials section. |
+| --- | --- | --- | --- |
+| `Testimonials` | None | JSX | Renders the testimonials section with animations. |
 
-#### Notes / Edge Cases
+### Notes
 
-- Ensure that the `testimonialsData` array contains valid data objects with the required properties (`name`, `role`, `image`, `text`, `rating`).
-- The `cardsRef` array should be properly managed to avoid any index mismatches.
-- The `useEffect` hook should be cleaned up to prevent memory leaks by calling `ctx.revert()`.
+- The `useEffect` hook sets up animations for each testimonial card when they come into view.
+- The `useRef` hook is used to reference the section and testimonial cards for GSAP animations.
+- The testimonials data is hardcoded in the file. For production, consider fetching this data from an API or a CMS.
+- Ensure GSAP and ScrollTrigger are installed in your project dependencies.
+- The animations are triggered when the cards are 85% into the viewport. Adjust the `start` value in `scrollTrigger` as needed.
 
