@@ -1,6 +1,8 @@
-import { useEffect, useRef } from 'react'
+```
+import { useEffect, useRef } from'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useAnimation } from 'src/utils/animation'
 import './ShowcaseGallery.css'
 
 const gallery = [
@@ -16,23 +18,13 @@ const ShowcaseGallery = () => {
   const sectionRef = useRef(null)
   const itemsRef = useRef([])
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      itemsRef.current.forEach((item, index) => {
-        gsap.from(item, {
-          scale: 0.8,
-          opacity: 0,
-          duration: 1,
-          scrollTrigger: {
-            trigger: item,
-            start: 'top 85%',
-          },
-        })
-      })
-    }, sectionRef)
-
-    return () => ctx.revert()
-  }, [])
+  useAnimation(sectionRef, itemsRef, {
+    from: { scale: 0.8, opacity: 0 },
+    duration: 1,
+    scrollTrigger: {
+      start: 'top 85%',
+    },
+  })
 
   return (
     <section ref={sectionRef} className="showcase-gallery">
@@ -58,3 +50,4 @@ const ShowcaseGallery = () => {
 }
 
 export default ShowcaseGallery
+```
