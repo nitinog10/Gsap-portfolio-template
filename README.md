@@ -1809,3 +1809,8 @@ No specific configuration is required for this CSS file. It should work out of t
 - Ensure GSAP and ScrollTrigger are installed in your project dependencies.
 - The animations are triggered when the cards are 85% into the viewport. Adjust the `start` value in `scrollTrigger` as needed.
 
+## Code Improvements Applied
+
+- Add regression tests around the highest-risk files: `src/components/ShowcaseGallery.jsx`, `src/components/Footer.jsx`, `src/components/ClientLogos.jsx`.
+- Consider extracting shared utility code into a dedicated module to lower coupling.
+- Re-index and regenerate walkthroughs/diagrams after structural changes to keep documentation current.
