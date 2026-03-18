@@ -1,32 +1,34 @@
-import './Footer.css'
+```jsx
+import './Footer.css';
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-cta">
-          <h2 className="footer-title">Let's Create Something Amazing</h2>
-          <p className="footer-subtitle">
-            Ready to bring your vision to life? Let's talk about your next project.
-          </p>
-          <button className="footer-btn">Start a Project →</button>
+          <h2 className="footer-title">{t('footer.cta.title')}</h2>
+          <p className="footer-subtitle">{t('footer.cta.subtitle')}</p>
+          <button className="footer-btn">{t('footer.cta.button')}</button>
         </div>
 
         <div className="footer-content">
           <div className="footer-col">
             <h3>John Doe</h3>
-            <p>Creative Developer & Digital Artist</p>
+            <p>{t('footer.about.description')}</p>
           </div>
 
           <div className="footer-col">
-            <h4>Links</h4>
-            <a href="#work">Work</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
+            <h4>{t('footer.links.title')}</h4>
+            <a href="#work">{t('footer.links.work')}</a>
+            <a href="#about">{t('footer.links.about')}</a>
+            <a href="#contact">{t('footer.links.contact')}</a>
           </div>
 
           <div className="footer-col">
-            <h4>Social</h4>
+            <h4>{t('footer.social.title')}</h4>
             <a href="#">GitHub</a>
             <a href="#">LinkedIn</a>
             <a href="#">Twitter</a>
@@ -34,7 +36,7 @@ const Footer = () => {
           </div>
 
           <div className="footer-col">
-            <h4>Contact</h4>
+            <h4>{t('footer.contact.title')}</h4>
             <a href="mailto:hello@johndoe.com">hello@johndoe.com</a>
             <a href="tel:+1234567890">+1 (234) 567-890</a>
           </div>
@@ -46,7 +48,8 @@ const Footer = () => {
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
+```

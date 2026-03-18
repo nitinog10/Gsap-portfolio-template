@@ -1,16 +1,16 @@
 ```jsx
-import { useEffect, useRef } from'react'
-import gsap from 'gsap'
-import { useMarquee } from '../../utils/marquee'
-import './ClientLogos.css'
+import { useEffect, useRef } from'react';
+import gsap from 'gsap';
+import { useMarquee } from '../../utils/marquee';
+import './ClientLogos.css';
 
 const ClientLogos = () => {
-  const { marqueeRef } = useMarquee()
+  const { marqueeRef } = useMarquee();
 
   const clients = [
     'Google', 'Apple', 'Microsoft', 'Amazon', 'Meta',
     'Netflix', 'Tesla', 'Spotify', 'Adobe', 'Nike'
-  ]
+  ];
 
   return (
     <section className="client-logos">
@@ -27,35 +27,37 @@ const ClientLogos = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default ClientLogos
+export default ClientLogos;
 ```
 
 ```js
-// File: src/utils/marquee.js
-
-import { useEffect, useRef } from'react'
-import gsap from 'gsap'
+import { useEffect, useRef } from'react';
+import gsap from 'gsap';
 
 export const useMarquee = () => {
-  const marqueeRef = useRef(null)
+  const marqueeRef = useRef(null);
 
   useEffect(() => {
-    const marquee = marqueeRef.current
-    const content = marquee.querySelector('.marquee-content')
-    const clone = content.cloneNode(true)
-    marquee.appendChild(clone)
+    const marquee = marqueeRef.current;
+    if (!marquee) return;
+
+    const content = marquee.querySelector('.marquee-content');
+    if (!content) return;
+
+    const clone = content.cloneNode(true);
+    marquee.appendChild(clone);
 
     gsap.to(marquee.children, {
       xPercent: -100,
       repeat: -1,
       duration: 30,
       ease: 'linear',
-    })
-  }, [])
+    });
+  }, []);
 
-  return { marqueeRef }
-}
+  return { marqueeRef };
+};
 ```
